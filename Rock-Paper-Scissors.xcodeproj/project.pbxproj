@@ -54,14 +54,62 @@
 		12473AE72ABEC59000BFCFD9 /* Rock-Paper-Scissors */ = {
 			isa = PBXGroup;
 			children = (
+				12473B012ABEDA9400BFCFD9 /* MainModule */,
+				12473AFF2ABED95400BFCFD9 /* Application */,
+				12473B002ABED99000BFCFD9 /* SupportingFiles */,
+			);
+			path = "Rock-Paper-Scissors";
+			sourceTree = "<group>";
+		};
+		12473AFC2ABED7BB00BFCFD9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				12473AEC2ABEC59000BFCFD9 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		12473AFD2ABED7C800BFCFD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12473AFE2ABED7D900BFCFD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12473AFF2ABED95400BFCFD9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				12473AE82ABEC59000BFCFD9 /* AppDelegate.swift */,
 				12473AEA2ABEC59000BFCFD9 /* SceneDelegate.swift */,
-				12473AEC2ABEC59000BFCFD9 /* ViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		12473B002ABED99000BFCFD9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				12473AF12ABEC59700BFCFD9 /* Assets.xcassets */,
 				12473AF32ABEC59700BFCFD9 /* LaunchScreen.storyboard */,
 				12473AF62ABEC59800BFCFD9 /* Info.plist */,
 			);
-			path = "Rock-Paper-Scissors";
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		12473B012ABEDA9400BFCFD9 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				12473AFE2ABED7D900BFCFD9 /* Model */,
+				12473AFD2ABED7C800BFCFD9 /* View */,
+				12473AFC2ABED7BB00BFCFD9 /* Controller */,
+			);
+			name = MainModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +330,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7J6C95TMNY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rock-Paper-Scissors/Info.plist";
+				INFOPLIST_FILE = "Rock-Paper-Scissors/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -310,7 +358,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7J6C95TMNY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Rock-Paper-Scissors/Info.plist";
+				INFOPLIST_FILE = "Rock-Paper-Scissors/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
