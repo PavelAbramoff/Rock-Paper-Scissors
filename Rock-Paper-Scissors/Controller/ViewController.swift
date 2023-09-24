@@ -27,7 +27,6 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 20
         button.backgroundColor = .lightGray
         button.setImage(UIImage(systemName: "hand.raised.app.fill"), for: .normal)
-        //button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         button.addTarget(self, action: #selector(playButtonPapped), for: .touchUpInside)
         button.addShadowOnView()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +38,6 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 20
         button.backgroundColor = .lightGray
         button.setImage(UIImage(systemName: "moonphase.new.moon.inverse"), for: .normal)
-        //button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         button.addTarget(self, action: #selector(playButtonPapped), for: .touchUpInside)
         button.addShadowOnView()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +49,6 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 20
         button.backgroundColor = .lightGray
         button.setImage(UIImage(systemName: "scissors"), for: .normal)
-        //button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 0)
         button.addTarget(self, action: #selector(playButtonPapped), for: .touchUpInside)
         button.addShadowOnView()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +68,7 @@ class ViewController: UIViewController {
     
     private let markPaper: UIView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .none
+        imageView.backgroundColor = .white
         imageView.image = UIImage(named: "paper")
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 2
@@ -94,7 +91,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         setupViews()
         setConstraints()
     }
