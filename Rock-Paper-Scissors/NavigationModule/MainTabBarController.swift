@@ -25,14 +25,18 @@ class MainTabBarController: UITabBarController {
     
     private func setupItems() {
         let mainVC = ViewController()
+        let loginVC = LoginVewController()
         
-        setViewControllers([mainVC], animated: true)
+        setViewControllers([loginVC, mainVC], animated: true)
         
         guard let items = tabBar.items else { return }
         
-        items[0].title = "Game"
-        
-        items[0].image = UIImage(systemName: "gamecontroller.fill")
+        items[0].title = "Login"
+        items[1].title = "Game"
+
+        items[0].image = UIImage(systemName: "person.circle.fill")
+        items[1].image = UIImage(systemName: "gamecontroller.fill")
+
         
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont(name: "Roboto-Bold", size: 14) as Any], for: .normal)
     }

@@ -17,6 +17,11 @@
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
 		3A97248C2AC0B7F20091E33B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */; };
+		3A97248E2AC1FC340091E33B /* LoginVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A97248D2AC1FC340091E33B /* LoginVewController.swift */; };
+		3A9724932AC20F300091E33B /* CuctomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724922AC20F300091E33B /* CuctomTextField.swift */; };
+		3A9724952AC210730091E33B /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724942AC210730091E33B /* UILabel + Extensions.swift */; };
+		3A9724972AC212160091E33B /* LoginPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724962AC212160091E33B /* LoginPasswordView.swift */; };
+		3A9724992AC213700091E33B /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724982AC213700091E33B /* UIStackView + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		3A97248D2AC1FC340091E33B /* LoginVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVewController.swift; sourceTree = "<group>"; };
+		3A9724922AC20F300091E33B /* CuctomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuctomTextField.swift; sourceTree = "<group>"; };
+		3A9724942AC210730091E33B /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		3A9724962AC212160091E33B /* LoginPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordView.swift; sourceTree = "<group>"; };
+		3A9724982AC213700091E33B /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +149,7 @@
 		3A97247D2AC00F350091E33B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3A97248D2AC1FC340091E33B /* LoginVewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 		3A97247E2AC00F450091E33B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A9724962AC212160091E33B /* LoginPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,8 +180,11 @@
 		3A9724832AC0B1650091E33B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A9724912AC20EF40091E33B /* Components */,
 				3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */,
 				3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */,
+				3A9724942AC210730091E33B /* UILabel + Extensions.swift */,
+				3A9724982AC213700091E33B /* UIStackView + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,6 +196,14 @@
 				3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3A9724912AC20EF40091E33B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3A9724922AC20F300091E33B /* CuctomTextField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,10 +278,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9724992AC213700091E33B /* UIStackView + Extensions.swift in Sources */,
 				3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */,
+				3A9724972AC212160091E33B /* LoginPasswordView.swift in Sources */,
 				12473AED2ABEC59000BFCFD9 /* ViewController.swift in Sources */,
 				3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */,
 				12473AE92ABEC59000BFCFD9 /* AppDelegate.swift in Sources */,
+				3A9724932AC20F300091E33B /* CuctomTextField.swift in Sources */,
+				3A9724952AC210730091E33B /* UILabel + Extensions.swift in Sources */,
+				3A97248E2AC1FC340091E33B /* LoginVewController.swift in Sources */,
 				3A9724822AC0B0A90091E33B /* MainTabBarController.swift in Sources */,
 				12473AEB2ABEC59000BFCFD9 /* SceneDelegate.swift in Sources */,
 			);
