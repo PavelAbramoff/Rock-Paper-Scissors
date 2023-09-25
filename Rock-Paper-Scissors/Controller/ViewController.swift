@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     
     private let markPaper: UIView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .white
         imageView.image = UIImage(named: "paper")
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 2
