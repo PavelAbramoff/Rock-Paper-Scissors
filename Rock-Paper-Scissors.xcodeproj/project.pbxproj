@@ -12,7 +12,15 @@
 		12473AED2ABEC59000BFCFD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12473AEC2ABEC59000BFCFD9 /* ViewController.swift */; };
 		12473AF22ABEC59700BFCFD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12473AF12ABEC59700BFCFD9 /* Assets.xcassets */; };
 		12473AF52ABEC59700BFCFD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12473AF32ABEC59700BFCFD9 /* LaunchScreen.storyboard */; };
-		3A9724822AC0B0A90091E33B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724812AC0B0A90091E33B /* MainTabBarController.swift */; };
+		3A2E19802AC9C19100BA4BA0 /* CuctomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E197F2AC9C19100BA4BA0 /* CuctomTextField.swift */; };
+		3A2E19832AC9C1AF00BA4BA0 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19812AC9C1AF00BA4BA0 /* UILabel + Extensions.swift */; };
+		3A2E19842AC9C1AF00BA4BA0 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19822AC9C1AF00BA4BA0 /* UIStackView + Extensions.swift */; };
+		3A2E19862AC9C1CF00BA4BA0 /* LoginVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19852AC9C1CF00BA4BA0 /* LoginVewController.swift */; };
+		3A2E19882AC9C1D800BA4BA0 /* LoginPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19872AC9C1D800BA4BA0 /* LoginPasswordView.swift */; };
+		3A2E198A2AC9C26400BA4BA0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19892AC9C26400BA4BA0 /* MainTabBarController.swift */; };
+		3A2E19912AC9C7AC00BA4BA0 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19902AC9C7AC00BA4BA0 /* StatisticViewController.swift */; };
+		3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */; };
+		3A2E19982AC9CE6400BA4BA0 /* CustomGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */; };
 		3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */; };
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
@@ -27,7 +35,15 @@
 		12473AF12ABEC59700BFCFD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12473AF42ABEC59700BFCFD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12473AF62ABEC59800BFCFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A9724812AC0B0A90091E33B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3A2E197F2AC9C19100BA4BA0 /* CuctomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuctomTextField.swift; sourceTree = "<group>"; };
+		3A2E19812AC9C1AF00BA4BA0 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		3A2E19822AC9C1AF00BA4BA0 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		3A2E19852AC9C1CF00BA4BA0 /* LoginVewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVewController.swift; path = Controller/LoginVewController.swift; sourceTree = SOURCE_ROOT; };
+		3A2E19872AC9C1D800BA4BA0 /* LoginPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPasswordView.swift; path = Views/LoginPasswordView.swift; sourceTree = SOURCE_ROOT; };
+		3A2E19892AC9C26400BA4BA0 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3A2E19902AC9C7AC00BA4BA0 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
+		3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGreenButton.swift; sourceTree = "<group>"; };
 		3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -66,7 +82,9 @@
 			children = (
 				3A9724802AC0B0680091E33B /* NavigationModule */,
 				3A97247C2AC00EE50091E33B /* RegistrationAndLoginModule */,
+				3A2E198B2AC9C57F00BA4BA0 /* SetupModule */,
 				12473B012ABEDA9400BFCFD9 /* MainModule */,
+				3A2E198C2AC9C59200BA4BA0 /* StatisticModule */,
 				12473AFF2ABED95400BFCFD9 /* Application */,
 				3A9724832AC0B1650091E33B /* Extensions */,
 				12473B002ABED99000BFCFD9 /* SupportingFiles */,
@@ -126,6 +144,79 @@
 			name = MainModule;
 			sourceTree = "<group>";
 		};
+		3A2E197E2AC9C19100BA4BA0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */,
+				3A2E197F2AC9C19100BA4BA0 /* CuctomTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3A2E198B2AC9C57F00BA4BA0 /* SetupModule */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E19932AC9C8AD00BA4BA0 /* Views */,
+				3A2E19922AC9C8A400BA4BA0 /* Models */,
+				3A2E19942AC9C8B500BA4BA0 /* Controller */,
+			);
+			path = SetupModule;
+			sourceTree = "<group>";
+		};
+		3A2E198C2AC9C59200BA4BA0 /* StatisticModule */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E198F2AC9C77900BA4BA0 /* Models */,
+				3A2E198E2AC9C76700BA4BA0 /* Views */,
+				3A2E198D2AC9C5BF00BA4BA0 /* Controller */,
+			);
+			path = StatisticModule;
+			sourceTree = "<group>";
+		};
+		3A2E198D2AC9C5BF00BA4BA0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E19902AC9C7AC00BA4BA0 /* StatisticViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3A2E198E2AC9C76700BA4BA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A2E198F2AC9C77900BA4BA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A2E19922AC9C8A400BA4BA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A2E19932AC9C8AD00BA4BA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A2E19942AC9C8B500BA4BA0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3A97247C2AC00EE50091E33B /* RegistrationAndLoginModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +230,7 @@
 		3A97247D2AC00F350091E33B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E19852AC9C1CF00BA4BA0 /* LoginVewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,6 +238,7 @@
 		3A97247E2AC00F450091E33B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E19872AC9C1D800BA4BA0 /* LoginPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,7 +253,7 @@
 		3A9724802AC0B0680091E33B /* NavigationModule */ = {
 			isa = PBXGroup;
 			children = (
-				3A9724812AC0B0A90091E33B /* MainTabBarController.swift */,
+				3A2E19892AC9C26400BA4BA0 /* MainTabBarController.swift */,
 			);
 			path = NavigationModule;
 			sourceTree = "<group>";
@@ -168,6 +261,9 @@
 		3A9724832AC0B1650091E33B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E197E2AC9C19100BA4BA0 /* Components */,
+				3A2E19812AC9C1AF00BA4BA0 /* UILabel + Extensions.swift */,
+				3A2E19822AC9C1AF00BA4BA0 /* UIStackView + Extensions.swift */,
 				3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */,
 				3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */,
 			);
@@ -255,11 +351,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2E19862AC9C1CF00BA4BA0 /* LoginVewController.swift in Sources */,
+				3A2E19802AC9C19100BA4BA0 /* CuctomTextField.swift in Sources */,
+				3A2E198A2AC9C26400BA4BA0 /* MainTabBarController.swift in Sources */,
+				3A2E19912AC9C7AC00BA4BA0 /* StatisticViewController.swift in Sources */,
+				3A2E19842AC9C1AF00BA4BA0 /* UIStackView + Extensions.swift in Sources */,
+				3A2E19882AC9C1D800BA4BA0 /* LoginPasswordView.swift in Sources */,
 				3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */,
+				3A2E19982AC9CE6400BA4BA0 /* CustomGreenButton.swift in Sources */,
 				12473AED2ABEC59000BFCFD9 /* ViewController.swift in Sources */,
 				3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */,
 				12473AE92ABEC59000BFCFD9 /* AppDelegate.swift in Sources */,
-				3A9724822AC0B0A90091E33B /* MainTabBarController.swift in Sources */,
+				3A2E19832AC9C1AF00BA4BA0 /* UILabel + Extensions.swift in Sources */,
+				3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */,
 				12473AEB2ABEC59000BFCFD9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
