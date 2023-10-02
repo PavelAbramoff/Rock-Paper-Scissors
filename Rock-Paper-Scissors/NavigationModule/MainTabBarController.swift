@@ -24,7 +24,7 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupItems() {
-        let mainVC = ViewController()
+        let mainVC = SettingGameViewController()
         
         setViewControllers([mainVC], animated: true)
         
