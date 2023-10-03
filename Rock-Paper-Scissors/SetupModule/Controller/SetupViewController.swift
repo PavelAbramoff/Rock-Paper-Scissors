@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingGameViewController: UIViewController {
+class SetupViewController: UIViewController {
     
     private let userLogoImageView: UIImageView = {
         let userImage = UIImageView()
@@ -104,7 +104,7 @@ class SettingGameViewController: UIViewController {
     }
 }
 
-extension SettingGameViewController {
+extension SetupViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             userLogoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),

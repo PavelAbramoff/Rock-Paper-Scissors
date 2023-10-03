@@ -17,7 +17,7 @@
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
 		3A97248C2AC0B7F20091E33B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */; };
-		78A19AD42ACAE85A009471CE /* SettingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD32ACAE85A009471CE /* SettingGameViewController.swift */; };
+		78A19AD42ACAE85A009471CE /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD32ACAE85A009471CE /* SetupViewController.swift */; };
 		78A19AD72ACAE8E6009471CE /* MatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD62ACAE8E6009471CE /* MatchButton.swift */; };
 		78A19AD92ACAE93F009471CE /* UIView + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD82ACAE93F009471CE /* UIView + Extentions.swift */; };
 		78A19ADC2ACAEA0B009471CE /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19ADB2ACAEA0B009471CE /* ActionView.swift */; };
@@ -36,7 +36,7 @@
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		78A19AD32ACAE85A009471CE /* SettingGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameViewController.swift; sourceTree = "<group>"; };
+		78A19AD32ACAE85A009471CE /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		78A19AD62ACAE8E6009471CE /* MatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchButton.swift; sourceTree = "<group>"; };
 		78A19AD82ACAE93F009471CE /* UIView + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extentions.swift"; sourceTree = "<group>"; };
 		78A19ADB2ACAEA0B009471CE /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				3A9724802AC0B0680091E33B /* NavigationModule */,
 				3A97247C2AC00EE50091E33B /* RegistrationAndLoginModule */,
 				12473B012ABEDA9400BFCFD9 /* MainModule */,
-				78A19AD12ACAE829009471CE /* SettingGameModule */,
+				78A19AD12ACAE829009471CE /* SetupModule */,
 				12473AFF2ABED95400BFCFD9 /* Application */,
 				3A9724832AC0B1650091E33B /* Extensions */,
 				12473B002ABED99000BFCFD9 /* SupportingFiles */,
@@ -194,19 +194,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		78A19AD12ACAE829009471CE /* SettingGameModule */ = {
+		78A19AD12ACAE829009471CE /* SetupModule */ = {
 			isa = PBXGroup;
 			children = (
 				78A19ADA2ACAE9E4009471CE /* View */,
 				78A19AD22ACAE83E009471CE /* Controller */,
 			);
-			path = SettingGameModule;
+			path = SetupModule;
 			sourceTree = "<group>";
 		};
 		78A19AD22ACAE83E009471CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				78A19AD32ACAE85A009471CE /* SettingGameViewController.swift */,
+				78A19AD32ACAE85A009471CE /* SetupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				78A19ADC2ACAEA0B009471CE /* ActionView.swift in Sources */,
 				3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */,
 				12473AED2ABEC59000BFCFD9 /* ViewController.swift in Sources */,
-				78A19AD42ACAE85A009471CE /* SettingGameViewController.swift in Sources */,
+				78A19AD42ACAE85A009471CE /* SetupViewController.swift in Sources */,
 				78A19AD72ACAE8E6009471CE /* MatchButton.swift in Sources */,
 				78A19AD92ACAE93F009471CE /* UIView + Extentions.swift in Sources */,
 				3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */,
