@@ -24,15 +24,25 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupItems() {
-        let mainVC = SetupViewController()
+        let mainVC = ViewController()
+        let loginVC = LoginVewController()
+        let StatVC = StatisticViewController()
+        let setupVC = SetupViewController()
         
-        setViewControllers([mainVC], animated: true)
+        setViewControllers([loginVC, setupVC, mainVC, StatVC], animated: true)
         
         guard let items = tabBar.items else { return }
         
-        items[0].title = "Game"
-        
-        items[0].image = UIImage(systemName: "gamecontroller.fill")
+        items[0].title = "Login"
+        items[1].title = "Setup"
+        items[2].title = "Game"
+        items[3].title = "Statistic"
+
+        items[0].image = UIImage(systemName: "person.circle.fill")
+        items[1].image = UIImage(systemName: "gearshape.fill")
+        items[2].image = UIImage(systemName: "gamecontroller.fill")
+        items[3].image = UIImage(systemName: "trophy.fill")
+
         
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont(name: "Roboto-Bold", size: 14) as Any], for: .normal)
     }
