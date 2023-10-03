@@ -27,6 +27,7 @@ class LoginPasswordView: UIView {
         
         setupViews()
         setConstraints()
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +35,6 @@ class LoginPasswordView: UIView {
     }
     
     private func setupViews() {
-       translatesAutoresizingMaskIntoConstraints = false
         addSubview(loginLabel)
         addSubview(loginTextField)
         addSubview(passwordLabel)
