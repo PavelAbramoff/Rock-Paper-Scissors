@@ -20,20 +20,25 @@ class ActionView: UIView {
     
     private let imageViewOne: UIImageView = {
         let imageView = UIImageView()
-//        imageView.backgroundColor = UIColor(patternImage: UIImage(named: "scorpion")!)
         imageView.layer.borderWidth = 5
-        imageView.layer.borderColor = UIColor.specialBlue.cgColor
+        imageView.layer.borderColor = UIColor.white.cgColor
         return imageView
     }()
     
     private let imageViewTwo: UIImageView = {
-               let imageView = UIImageView()
-               imageView.backgroundColor = UIColor(patternImage: UIImage(named: "sab-ziro")!)
-               imageView.clipsToBounds = true
-               imageView.layer.borderWidth = 5
-               imageView.layer.borderColor = UIColor.specialBlue.cgColor
-               return imageView
-           }()
+        let imageView = UIImageView()
+        imageView.layer.borderWidth = 5
+        imageView.layer.borderColor = UIColor.white.cgColor
+        return imageView
+    }()
+    
+    private let vSimageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image?.withRenderingMode(.alwaysTemplate)
+        imageView.backgroundColor = .clear
+        imageView.alpha = 0
+        return imageView
+    }()
     
     private var mainView: UIView? = nil
     
@@ -45,7 +50,7 @@ class ActionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func presentView(viewController: UIViewController, numberRounds: Int) {
+    func presentView(viewController: UIViewController) {
         guard let parentView = viewController.view else { return }
         mainView = parentView
         backgroundView.frame = parentView.frame
@@ -54,15 +59,33 @@ class ActionView: UIView {
         fonView.frame = parentView.frame
         parentView.addSubview(fonView)
         
-        imageViewOne.frame = CGRect(x: -parentView.frame.width,
-                                    y: 100,
+        imageViewOne.frame = CGRect(x: parentView.frame.width,
+                                    y: 200,
                                     width: parentView.frame.width - 20,
                                     height: 200)
         imageViewOne.image = UIImage(named: "sab-ziro")
         imageViewOne.contentMode = .scaleAspectFill
         imageViewOne.clipsToBounds = true
-        imageViewOne.alpha = 1
+        imageViewOne.layer.cornerRadius = imageViewOne.frame.height / 2
         fonView.addSubview(imageViewOne)
+        
+        imageViewTwo.frame = CGRect(x: -parentView.frame.width,
+                                    y: imageViewOne.frame.maxY + 50,
+                                    width: parentView.frame.width - 20,
+                                    height: 200)
+        imageViewTwo.image = UIImage(named: "scorpion")
+        imageViewTwo.contentMode = .scaleAspectFill
+        imageViewTwo.clipsToBounds = true
+        imageViewTwo.layer.cornerRadius = imageViewTwo.frame.height / 2
+        fonView.addSubview(imageViewTwo)
+        
+        vSimageView.frame = CGRect(x: parentView.frame.width / 2 - parentView.frame.width / 4,
+                                   y: imageViewOne.frame.maxY + 25 - parentView.frame.width / 4,
+                                   width: parentView.frame.width / 2,
+                                   height: parentView.frame.width / 2)
+        vSimageView.image = UIImage(named: "vsLabel")
+        vSimageView.contentMode = .scaleAspectFit
+        fonView.addSubview(vSimageView)
         
         UIView.animate(withDuration: 1) {
             self.backgroundView.alpha = 0.8
@@ -70,9 +93,19 @@ class ActionView: UIView {
             if done {
                 UIView.animate(withDuration: 2) {
                     self.imageViewOne.frame = CGRect(x: 10,
-                                                y: 100,
+                                                y: 200,
                                                 width: self.backgroundView.frame.width - 20,
                                                 height: 200)
+                    self.imageViewTwo.frame = CGRect(x: 10,
+                                                     y: self.imageViewOne.frame.maxY + 50,
+                                                     width: self.backgroundView.frame.width - 20,
+                                                     height: 200)
+                } completion: { done in
+                    if done {
+                        UIView.animate(withDuration: 0.5) {
+                            self.vSimageView.alpha = 1
+                        }
+                    }
                 }
             }
         }
