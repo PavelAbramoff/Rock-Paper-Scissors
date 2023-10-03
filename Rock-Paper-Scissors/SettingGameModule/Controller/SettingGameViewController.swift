@@ -84,14 +84,18 @@ class SettingGameViewController: UIViewController {
         view.addSubview(tenBatleButton)
         tenBatleButton.addTarget(self, action: #selector(batleButtonTapped), for: .touchUpInside)
     }
+    
     @objc private func batleButtonTapped(button: MatchButton) {
         button.backgroundColor = .specialYellow
         button.tintColor = .blue
         actionView.presentView(viewController: self)
         guard let rounds = button.countRounds else { return }
         countRounds = rounds
-        let delayInSeconds: TimeInterval = 5
+        let delayInSeconds: TimeInterval = 4
         DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
+            self.actionView.removeView()
+            button.backgroundColor = .specialBlue
+            button.tintColor = .white
             let gameVC = ViewController()
             gameVC.modalPresentationStyle = .fullScreen
             self.present(gameVC, animated: true)

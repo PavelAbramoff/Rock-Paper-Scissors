@@ -110,75 +110,11 @@ class ActionView: UIView {
             }
         }
     }
-//        private let vSLabel: UILabel = {
-//            let label = UILabel()
-//            label.text = "VS"
-//            label.alpha = 0.0
-//            label.font = .robotoBold16()
-//            label.textAlignment = .center
-//            label.textColor = .specialGrayText
-//            label.translatesAutoresizingMaskIntoConstraints = false
-//            return label
-//        }()
-//        
-//        private let vsView: UIView = {
-//          let view = UIView()
-//            view.backgroundColor = .white
-//            view.alpha = 0.0
-//            view.frame.size = CGSize(width: 50, height: 50)
-//            view.layer.cornerRadius = 25
-//            view.layer.borderWidth = 5
-//            view.layer.borderColor = UIColor.specialBlue.cgColor
-//            view.translatesAutoresizingMaskIntoConstraints = false
-//            return view
-//        }()
     
-//    private func animation() {
-//        let initialFrameOne = CGRect(x: -view.frame.size.width,
-//                                     y: 200,
-//                                     width: view.bounds.width * 0.7,
-//                                     height: view.bounds.width * 0.7 * 0.3)
-//        imageViewOne.frame = initialFrameOne
-//
-//        let finalFrameOne = CGRect(x: view.bounds.width * 0.3 / 2,
-//                                   y: 200, width: view.bounds.width * 0.7,
-//                                   height: view.bounds.width * 0.7 * 0.3)
-//
-//        let initialFrameTwo = CGRect(x: view.frame.size.width,
-//                                     y: imageViewOne.frame.origin.y + imageViewOne.frame.height + 6,
-//                                     width: view.bounds.width * 0.7,
-//                                     height: view.bounds.width * 0.7 * 0.3)
-//        imageViewTwo.frame = initialFrameTwo
-//
-//        let finalFrameTwo = CGRect(x: view.bounds.width * 0.3 / 2, y: imageViewOne.frame.origin.y + imageViewOne.frame.height + 5, width: view.bounds.width * 0.7, height: view.bounds.width * 0.7 * 0.3)
-//
-//        view.addSubview(imageViewOne)
-//        UIView.animate(withDuration: 2) {
-//            self.imageViewOne.frame = finalFrameOne
-//        }
-//
-//        view.addSubview(imageViewTwo)
-//        UIView.animate(withDuration: 2) {
-//            self.imageViewTwo.frame = finalFrameTwo
-//        }
-//
-//        let initialFrameVS = CGRect(x: view.bounds.size.width / 2 - vsView.bounds.size.height / 2,
-//                                    y: imageViewTwo.frame.origin.y - 3 - vsView.bounds.size.height / 2,
-//                                    width: self.vsView.bounds.width,
-//                                     height: self.vsView.bounds.width)
-//
-//        vsView.frame = initialFrameVS
-//
-//        view.addSubview(vsView)
-//        view.addSubview(vSLabel)
-//        NSLayoutConstraint.activate([
-//            vSLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            vSLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 275)
-//        ])
-//        UIView.animate(withDuration: 2) {
-//            self.vsView.alpha = 1.0
-//            self.vSLabel.alpha = 1.0
-//        }
-//    }
-//}
+    func removeView() {
+        fonView.removeFromSuperview()
+        backgroundView.alpha = 0
+        vSimageView.alpha = 0
+        backgroundView.removeFromSuperview()
+    }
 }
