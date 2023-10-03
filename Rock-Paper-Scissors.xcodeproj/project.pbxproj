@@ -21,14 +21,14 @@
 		3A2E19912AC9C7AC00BA4BA0 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19902AC9C7AC00BA4BA0 /* StatisticViewController.swift */; };
 		3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */; };
 		3A2E19982AC9CE6400BA4BA0 /* CustomGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */; };
+		3A2E19A52ACC83DF00BA4BA0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19A42ACC83DF00BA4BA0 /* UserModel.swift */; };
 		3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */; };
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
 		3A97248C2AC0B7F20091E33B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */; };
-		78A19AD42ACAE85A009471CE /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD32ACAE85A009471CE /* SetupViewController.swift */; };
-		78A19AD72ACAE8E6009471CE /* MatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD62ACAE8E6009471CE /* MatchButton.swift */; };
 		78A19AD92ACAE93F009471CE /* UIView + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD82ACAE93F009471CE /* UIView + Extentions.swift */; };
-		78A19ADC2ACAEA0B009471CE /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19ADB2ACAEA0B009471CE /* ActionView.swift */; };
+		78A19AE72ACC2924009471CE /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AE62ACC2924009471CE /* ActionView.swift */; };
+		78A19AE92ACC2950009471CE /* MatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AE82ACC2950009471CE /* MatchButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,14 +48,14 @@
 		3A2E19902AC9C7AC00BA4BA0 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGreenButton.swift; sourceTree = "<group>"; };
+		3A2E19A42ACC83DF00BA4BA0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = ../../../../MyFirstApp/MyFirstApp_31.08.23/MyFirstApp_31.08.23/StatisticModule/Models/UserModel.swift; sourceTree = "<group>"; };
 		3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		78A19AD32ACAE85A009471CE /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
-		78A19AD62ACAE8E6009471CE /* MatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchButton.swift; sourceTree = "<group>"; };
 		78A19AD82ACAE93F009471CE /* UIView + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extentions.swift"; sourceTree = "<group>"; };
-		78A19ADB2ACAEA0B009471CE /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
+		78A19AE62ACC2924009471CE /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionView.swift; path = "Rock-Paper-Scissors/SetupModule/View/ActionView.swift"; sourceTree = SOURCE_ROOT; };
+		78A19AE82ACC2950009471CE /* MatchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +155,7 @@
 		3A2E197E2AC9C19100BA4BA0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				78A19AE82ACC2950009471CE /* MatchButton.swift */,
 				3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */,
 				3A2E197F2AC9C19100BA4BA0 /* CuctomTextField.swift */,
 			);
@@ -213,6 +214,7 @@
 		3A2E19932AC9C8AD00BA4BA0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78A19AE62ACC2924009471CE /* ActionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +256,7 @@
 		3A97247F2AC00F500091E33B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E19A42ACC83DF00BA4BA0 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,39 +289,6 @@
 				3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		78A19AD12ACAE829009471CE /* SetupModule */ = {
-			isa = PBXGroup;
-			children = (
-				78A19ADA2ACAE9E4009471CE /* View */,
-				78A19AD22ACAE83E009471CE /* Controller */,
-			);
-			path = SetupModule;
-			sourceTree = "<group>";
-		};
-		78A19AD22ACAE83E009471CE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				78A19AD32ACAE85A009471CE /* SetupViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		78A19AD52ACAE887009471CE /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				78A19AD62ACAE8E6009471CE /* MatchButton.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		78A19ADA2ACAE9E4009471CE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				78A19ADB2ACAEA0B009471CE /* ActionView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +335,9 @@
 				Base,
 			);
 			mainGroup = 12473ADC2ABEC59000BFCFD9;
+			packageReferences = (
+				3A2E19A32ACC83AF00BA4BA0 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 12473AE62ABEC59000BFCFD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -402,13 +375,14 @@
 				3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */,
 				3A2E19982AC9CE6400BA4BA0 /* CustomGreenButton.swift in Sources */,
 				12473AED2ABEC59000BFCFD9 /* ViewController.swift in Sources */,
-				78A19AD42ACAE85A009471CE /* SetupViewController.swift in Sources */,
-				78A19AD72ACAE8E6009471CE /* MatchButton.swift in Sources */,
 				78A19AD92ACAE93F009471CE /* UIView + Extentions.swift in Sources */,
+				78A19AE92ACC2950009471CE /* MatchButton.swift in Sources */,
+				78A19AE72ACC2924009471CE /* ActionView.swift in Sources */,
 				3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */,
 				12473AE92ABEC59000BFCFD9 /* AppDelegate.swift in Sources */,
 				3A2E19832AC9C1AF00BA4BA0 /* UILabel + Extensions.swift in Sources */,
 				3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */,
+				3A2E19A52ACC83DF00BA4BA0 /* UserModel.swift in Sources */,
 				12473AEB2ABEC59000BFCFD9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +604,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A2E19A32ACC83AF00BA4BA0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 12473ADD2ABEC59000BFCFD9 /* Project object */;
 }
