@@ -63,14 +63,17 @@ class LoginVewController: UIViewController {
         let password = loginPasswordView.getPasswordData()
         
         do {
-//            let users = 
-        } catch {
+            let users = RealmManager.shared.getUserData().filter("username = %@ AND password = %@", username, password)
+            if let user = users.first {
+                print("Пользователь успешно авторизован!")
+            } else {
+                print("Ошибка авторизации пользователя: неверное имя пользователя или пароль")
+            }
             
+        } catch let error as NSError {
+            print("Ошибка авторизации пользователя: \(error.localizedDescription)")
         }
-        
     }
-    
-    
 }
 
 extension LoginVewController {
