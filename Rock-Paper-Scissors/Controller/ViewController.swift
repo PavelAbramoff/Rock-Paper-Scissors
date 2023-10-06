@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
+    // MARK: - Variables
+    var myPoints = 0
+    var pcPoints = 0
+    let array = ["rock2","paper2","scissors2"]
+    
     private let paperButton = MatchButton(text: "Paper", countRounds: 1)
     private let rockButton = MatchButton(text: "Rock", countRounds: 1)
     private let scissorsButton = MatchButton(text: "Scissors", countRounds: 1)
@@ -27,6 +32,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         distribution: .fillEqually)
     
     let tapSyncMethod = "handleSyncTap:"
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +55,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         rockButton.addGestureRecognizer(syncTapButton)
         scissorsButton.addGestureRecognizer(syncTapButton)
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
