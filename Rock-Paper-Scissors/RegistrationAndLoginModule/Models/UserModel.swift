@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
+
+class UserModel: Object {
+    @Persisted var username: String = ""
+    @Persisted var password: String = ""
+}

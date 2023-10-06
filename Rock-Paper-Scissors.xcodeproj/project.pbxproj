@@ -25,6 +25,7 @@
 		3A2E19A82ACC851800BA4BA0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19A72ACC851800BA4BA0 /* UserModel.swift */; };
 		3A2E19AB2ACC8D0200BA4BA0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2E19AA2ACC8D0200BA4BA0 /* Realm */; };
 		3A2E19AD2ACC8D0200BA4BA0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2E19AC2ACC8D0200BA4BA0 /* RealmSwift */; };
+		3A2E19B72AD085F000BA4BA0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19B62AD085F000BA4BA0 /* RealmManager.swift */; };
 		3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */; };
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
@@ -53,6 +54,7 @@
 		3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGreenButton.swift; sourceTree = "<group>"; };
 		3A2E19A72ACC851800BA4BA0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3A2E19B62AD085F000BA4BA0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		12473AE72ABEC59000BFCFD9 /* Rock-Paper-Scissors */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E19B52AD085CE00BA4BA0 /* Services */,
 				3A9724802AC0B0680091E33B /* NavigationModule */,
 				3A97247C2AC00EE50091E33B /* RegistrationAndLoginModule */,
 				3A2E198B2AC9C57F00BA4BA0 /* SetupModule */,
@@ -239,6 +242,14 @@
 				3A2E19A72ACC851800BA4BA0 /* UserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3A2E19B52AD085CE00BA4BA0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E19B62AD085F000BA4BA0 /* RealmManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		3A97247C2AC00EE50091E33B /* RegistrationAndLoginModule */ = {
@@ -394,6 +405,7 @@
 				12473AE92ABEC59000BFCFD9 /* AppDelegate.swift in Sources */,
 				3A2E19832AC9C1AF00BA4BA0 /* UILabel + Extensions.swift in Sources */,
 				3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */,
+				3A2E19B72AD085F000BA4BA0 /* RealmManager.swift in Sources */,
 				3A2E19A82ACC851800BA4BA0 /* UserModel.swift in Sources */,
 				12473AEB2ABEC59000BFCFD9 /* SceneDelegate.swift in Sources */,
 			);

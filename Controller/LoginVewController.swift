@@ -9,6 +9,7 @@ import UIKit
 
 class LoginVewController: UIViewController {
     
+    static var globalUserName = ""
     private let logoView: UIImageView = {
         let imageView = UIImageView(
             frame: CGRect(
@@ -51,8 +52,25 @@ class LoginVewController: UIViewController {
         view.addSubview(welcomeLabel)
         view.addSubview(loginPasswordView)
         view.addSubview(loginButton)
-
+        
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
+    
+    @objc private func loginButtonTapped() {
+        
+        let username = loginPasswordView.getLoginData()
+        let password = loginPasswordView.getPasswordData()
+        
+        do {
+//            let users = 
+        } catch {
+            
+        }
+        
+    }
+    
+    
 }
 
 extension LoginVewController {
