@@ -40,6 +40,16 @@ class LoginPasswordView: UIView {
         addSubview(passwordLabel)
         addSubview(passwordTextField)
     }
+    
+    func getLoginData() -> String {
+        guard let login = loginTextField.text else {return ""}
+        return login
+    }
+    
+    func getPasswordData() -> String {
+        guard let password = passwordTextField.text else {return ""}
+        return password
+    }
 }
 
 extension LoginPasswordView {
