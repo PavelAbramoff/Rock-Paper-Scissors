@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomGreenButton: UIButton {
+class CustomButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -17,18 +17,17 @@ class CustomGreenButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(text: String) {
+    convenience init(text: String, color: UIColor, textColor: UIColor) {
         self.init(type: .system)
         setTitle(text, for: .normal)
-        
+        backgroundColor = color
+        tintColor = textColor
         configure()
     }
     
     private func configure() {
-        backgroundColor = .specialGreenText
         layer.cornerRadius = 10
         titleLabel?.font = .robotoBold16()
-        tintColor = .white
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

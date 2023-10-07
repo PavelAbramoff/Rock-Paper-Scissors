@@ -21,11 +21,16 @@
 		3A2E198A2AC9C26400BA4BA0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19892AC9C26400BA4BA0 /* MainTabBarController.swift */; };
 		3A2E19912AC9C7AC00BA4BA0 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19902AC9C7AC00BA4BA0 /* StatisticViewController.swift */; };
 		3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */; };
-		3A2E19982AC9CE6400BA4BA0 /* CustomGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */; };
+		3A2E19982AC9CE6400BA4BA0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19972AC9CE6400BA4BA0 /* CustomButton.swift */; };
 		3A2E19A82ACC851800BA4BA0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19A72ACC851800BA4BA0 /* UserModel.swift */; };
 		3A2E19AB2ACC8D0200BA4BA0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2E19AA2ACC8D0200BA4BA0 /* Realm */; };
 		3A2E19AD2ACC8D0200BA4BA0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3A2E19AC2ACC8D0200BA4BA0 /* RealmSwift */; };
 		3A2E19B72AD085F000BA4BA0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19B62AD085F000BA4BA0 /* RealmManager.swift */; };
+		3A2E19B92AD1490100BA4BA0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19B82AD1490100BA4BA0 /* RegistrationViewController.swift */; };
+		3A2E19BD2AD15BA800BA4BA0 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19BC2AD15BA800BA4BA0 /* CloseButton.swift */; };
+		3A2E19BF2AD162E100BA4BA0 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19BE2AD162E100BA4BA0 /* UIViewController + Extensions.swift */; };
+		3A2E19C12AD182CC00BA4BA0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19C02AD182CC00BA4BA0 /* UserSettings.swift */; };
+		3A2E19C72AD19DCF00BA4BA0 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19C62AD19DCF00BA4BA0 /* RulesViewController.swift */; };
 		3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */; };
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
@@ -52,9 +57,14 @@
 		3A2E19892AC9C26400BA4BA0 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3A2E19902AC9C7AC00BA4BA0 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		3A2E19952AC9C8DD00BA4BA0 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
-		3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGreenButton.swift; sourceTree = "<group>"; };
+		3A2E19972AC9CE6400BA4BA0 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3A2E19A72ACC851800BA4BA0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3A2E19B62AD085F000BA4BA0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		3A2E19B82AD1490100BA4BA0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Rock-Paper-Scissors/Services/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		3A2E19BC2AD15BA800BA4BA0 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		3A2E19BE2AD162E100BA4BA0 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		3A2E19C02AD182CC00BA4BA0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		3A2E19C62AD19DCF00BA4BA0 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				12473AEC2ABEC59000BFCFD9 /* ViewController.swift */,
+				3A2E19C62AD19DCF00BA4BA0 /* RulesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,8 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				78A19AE82ACC2950009471CE /* MatchButton.swift */,
-				3A2E19972AC9CE6400BA4BA0 /* CustomGreenButton.swift */,
+				3A2E19972AC9CE6400BA4BA0 /* CustomButton.swift */,
 				3A2E197F2AC9C19100BA4BA0 /* CuctomTextField.swift */,
+				3A2E19BC2AD15BA800BA4BA0 /* CloseButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -240,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				3A2E19A72ACC851800BA4BA0 /* UserModel.swift */,
+				3A2E19C02AD182CC00BA4BA0 /* UserSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +263,20 @@
 				3A2E19B62AD085F000BA4BA0 /* RealmManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3A2E19C22AD189BD00BA4BA0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A2E19C32AD189C900BA4BA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3A97247C2AC00EE50091E33B /* RegistrationAndLoginModule */ = {
@@ -266,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				3A2E19852AC9C1CF00BA4BA0 /* LoginVewController.swift */,
+				3A2E19B82AD1490100BA4BA0 /* RegistrationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +309,8 @@
 		3A9724802AC0B0680091E33B /* NavigationModule */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E19C32AD189C900BA4BA0 /* Model */,
+				3A2E19C22AD189BD00BA4BA0 /* Controllers */,
 				3A2E19892AC9C26400BA4BA0 /* MainTabBarController.swift */,
 			);
 			path = NavigationModule;
@@ -296,6 +326,7 @@
 				3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */,
 				78A19AD82ACAE93F009471CE /* UIView + Extentions.swift */,
 				12EF0D622ACD3AD9002519C4 /* UIView + Rotation.swift */,
+				3A2E19BE2AD162E100BA4BA0 /* UIViewController + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,22 +421,27 @@
 			files = (
 				3A2E19862AC9C1CF00BA4BA0 /* LoginVewController.swift in Sources */,
 				3A2E19802AC9C19100BA4BA0 /* CuctomTextField.swift in Sources */,
+				3A2E19BF2AD162E100BA4BA0 /* UIViewController + Extensions.swift in Sources */,
 				3A2E198A2AC9C26400BA4BA0 /* MainTabBarController.swift in Sources */,
 				3A2E19912AC9C7AC00BA4BA0 /* StatisticViewController.swift in Sources */,
+				3A2E19BD2AD15BA800BA4BA0 /* CloseButton.swift in Sources */,
 				3A2E19842AC9C1AF00BA4BA0 /* UIStackView + Extensions.swift in Sources */,
 				12EF0D632ACD3AD9002519C4 /* UIView + Rotation.swift in Sources */,
 				3A2E19882AC9C1D800BA4BA0 /* LoginPasswordView.swift in Sources */,
 				3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */,
-				3A2E19982AC9CE6400BA4BA0 /* CustomGreenButton.swift in Sources */,
+				3A2E19982AC9CE6400BA4BA0 /* CustomButton.swift in Sources */,
 				12473AED2ABEC59000BFCFD9 /* ViewController.swift in Sources */,
 				78A19AD92ACAE93F009471CE /* UIView + Extentions.swift in Sources */,
+				3A2E19C12AD182CC00BA4BA0 /* UserSettings.swift in Sources */,
 				78A19AE92ACC2950009471CE /* MatchButton.swift in Sources */,
 				78A19AE72ACC2924009471CE /* ActionView.swift in Sources */,
 				3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */,
 				12473AE92ABEC59000BFCFD9 /* AppDelegate.swift in Sources */,
 				3A2E19832AC9C1AF00BA4BA0 /* UILabel + Extensions.swift in Sources */,
 				3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */,
+				3A2E19C72AD19DCF00BA4BA0 /* RulesViewController.swift in Sources */,
 				3A2E19B72AD085F000BA4BA0 /* RealmManager.swift in Sources */,
+				3A2E19B92AD1490100BA4BA0 /* RegistrationViewController.swift in Sources */,
 				3A2E19A82ACC851800BA4BA0 /* UserModel.swift in Sources */,
 				12473AEB2ABEC59000BFCFD9 /* SceneDelegate.swift in Sources */,
 			);

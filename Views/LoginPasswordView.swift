@@ -9,7 +9,7 @@ import UIKit
 
 class LoginPasswordView: UIView {
     
-    private let loginLabel = UILabel(text: "Login: ",
+    private let loginLabel = UILabel(text: "User Name: ",
                                      font: .robotoBold20(),
                                      textColor: .specialGrayText)
     

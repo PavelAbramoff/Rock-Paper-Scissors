@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var pcPoints = 0
     let array = ["rock2","paper2","scissors2"]
     
+    private let closeButton = CloseButton()
+    
     private let paperButton = MatchButton(text: "Paper", countRounds: 1)
     private let rockButton = MatchButton(text: "Rock", countRounds: 1)
     private let scissorsButton = MatchButton(text: "Scissors", countRounds: 1)
@@ -39,10 +41,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(closeButton)
         view.addSubview(syncImage)
         view.addSubview(syncContainer)
         setConstraint()
         view.backgroundColor = .white
+        
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         
         let syncTapButton = UITapGestureRecognizer(target: self, action: #selector(handleSyncTap(sender:)))
         syncTapButton.delegate = self
@@ -79,6 +84,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             self.stopSpinning()
         }
     }
+    
+    @objc private func closeButtonTapped() {
+        dismiss(animated: true)
+    }
 }
 
 extension ViewController {
@@ -86,7 +95,12 @@ extension ViewController {
     private func setConstraint() {
         NSLayoutConstraint.activate([
             
-            syncImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 220),
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            closeButton.heightAnchor.constraint(equalToConstant: 40),
+            closeButton.widthAnchor.constraint(equalToConstant: 40),
+            
+            syncImage.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 210),
             syncImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             syncImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             syncImage.heightAnchor.constraint(equalToConstant: 300),

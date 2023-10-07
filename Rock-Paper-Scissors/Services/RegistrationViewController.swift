@@ -1,13 +1,15 @@
 //
-//  LoginVewController.swift
+//  RegistrationViewController.swift
 //  Rock-Paper-Scissors
 //
-//  Created by Anton Morenko on 25.09.2023.
+//  Created by Anton Morenko on 07.10.2023.
 //
 
 import UIKit
 
-class LoginVewController: UIViewController {
+class RegistrationViewController: UIViewController {
+    
+    private lazy var closeButton = CloseButton(type: .system)
     
     private let logoView: UIImageView = {
         let imageView = UIImageView(
@@ -29,26 +31,15 @@ class LoginVewController: UIViewController {
     }()
     
     private let welcomeLabel = UILabel(
-        text: "Welcome to Rock-Paper-Scissors Game!",
+        text: "Nice to meet You!",
         font: .robotoBold24(),
         textColor: .specialMidnightBlue
     )
     
+    private let registerButton = CustomButton(text: "Register Me!", color: .specialYellow, textColor: .specialGrayText)
+    
     private let loginPasswordView = LoginPasswordView()
     
-    private let loginButton = CustomButton(
-        text: "Authorise me!",
-        color: .specialGreenText,
-        textColor: .white
-    )
-    
-    private let registerButton = CustomButton(
-        text: "I'm new, register me!",
-        color: .specialYellow,
-        textColor: .specialGrayText
-    )
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,70 +49,68 @@ class LoginVewController: UIViewController {
     }
     private func setupViews() {
         view.backgroundColor = .systemBackground
+        view.addSubview(closeButton)
         view.addSubview(logoView)
         view.addSubview(welcomeLabel)
         view.addSubview(loginPasswordView)
-        view.addSubview(loginButton)
         view.addSubview(registerButton)
         
         
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
     
-    @objc private func loginButtonTapped() {
+    @objc private func closeButtonTapped() {
+        dismiss(animated: true)
+    }
+    
+    @objc private func registerButtonTapped() {
         
         let username = loginPasswordView.getLoginData()
         let password = loginPasswordView.getPasswordData()
         
         do {
-            let users = RealmManager.shared.getUserData().filter(
-                "username = %@ AND password = %@",
-                username,
-                password
-            )
-            if let user = users.first {
-                print("Пользователь успешно авторизован!")
-                UserSettings.userName = username
-                UserSettings.isUserAuthorised = true
-                UserSettings.isThisFirstRunning = false
-                
-                presentingViewController?.dismiss(animated: true)
-                
-                let tabBar = MainTabBarController()
-                tabBar.modalPresentationStyle = .fullScreen
-                
-                tabBarController?.present(
-                    tabBar,
-                    animated: true)
-                
-                
-                
-                
-            } else {
-                print("Ошибка авторизации пользователя: неверное имя пользователя или пароль")
-//                UserSettings.isUserAuthorised = false
-            }
+            let newUser = UserModel()
+            
+            newUser.username = username
+            newUser.password = password
+            
+            RealmManager.shared.saveUserData(newUser)
+            
+            showAlert(title: "Succes 👍", message: "Hello, \(username)")
+            
+            UserSettings.userName = username
+            UserSettings.isUserAuthorised = true
+            UserSettings.isThisFirstRunning = false
+            
+            presentingViewController?.dismiss(animated: true)
+            
+            let tabBar = MainTabBarController()
+            tabBar.modalPresentationStyle = .fullScreen
+            
+            tabBarController?.present(
+                tabBar,
+                animated: true)
+            
             
         } catch let error as NSError {
             print("Ошибка авторизации пользователя: \(error.localizedDescription)")
+            showAlert(title: "Error ⚠️", message: "Something gone wrong ☹️")
         }
     }
-    
-    @objc private func registerButtonTapped() {
-        let registerVC = RegistrationViewController()
-        registerVC.modalPresentationStyle = .pageSheet
-        present(registerVC, animated: true)
-    }
-    
 }
 
-extension LoginVewController {
+extension RegistrationViewController {
     private func setConstaints() {
         NSLayoutConstraint.activate([
         
-            logoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            closeButton.heightAnchor.constraint(equalToConstant: 40),
+            closeButton.widthAnchor.constraint(equalToConstant: 40),
+            
+            logoView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 30),
             logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoView.heightAnchor.constraint(equalToConstant: 200),
             logoView.widthAnchor.constraint(equalToConstant: 200),
@@ -136,12 +125,7 @@ extension LoginVewController {
             loginPasswordView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             loginPasswordView.heightAnchor.constraint(equalToConstant: 200),
             
-            loginButton.topAnchor.constraint(equalTo: loginPasswordView.bottomAnchor, constant: 10),
-            loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            loginButton.heightAnchor.constraint(equalToConstant: 55),
-            
-            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
+            registerButton.topAnchor.constraint(equalTo: loginPasswordView.bottomAnchor, constant: 10),
             registerButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             registerButton.heightAnchor.constraint(equalToConstant: 55)
