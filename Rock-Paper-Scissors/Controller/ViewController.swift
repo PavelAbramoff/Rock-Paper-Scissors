@@ -17,22 +17,27 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private let closeButton = CloseButton()
     
     private let playerPointDiscription: UILabel = {
-        let label = UILabel()
-        label.text = "Your Point"
-        label.textColor = .blue
-        label.font = .robotoBold48()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+                let label = UILabel()
+                label.text = "Your Points"
+                label.textColor = .blue
+                label.font = .robotoBold20()
+                label.layer.cornerRadius = 10
+                label.addShadowOnView()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                return label
+            }()
+
     private let computerPointDiscription: UILabel = {
-        let label = UILabel()
-        label.text = "Computer Point"
-        label.textColor = .blue
-        label.font = .robotoBold48()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+                let label = UILabel()
+                label.text = "Computer Points"
+                label.textColor = .blue
+                label.font = .robotoBold20()
+                label.layer.cornerRadius = 10
+                label.addShadowOnView()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                return label
+            }()
+
     
     private let playerPoint: UILabel = {
         let label = UILabel()
@@ -78,8 +83,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         view.addSubview(closeButton)
+        view.addSubview(playerPointDiscription)
+        view.addSubview(computerPointDiscription)
+        view.addSubview(playerPoint)
+        view.addSubview(computerPoint)
         view.addSubview(syncImage)
         view.addSubview(syncContainer)
+        
         setConstraint()
         view.backgroundColor = .white
         
@@ -87,7 +97,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         let syncTapButton = UITapGestureRecognizer(target: self, action: #selector(handleSyncTap(sender:)))
         syncTapButton.delegate = self
-        
         let syncTapView = UITapGestureRecognizer(target: self, action: #selector(handleSyncTap(sender:)))
         syncTapView.delegate = self
         
@@ -147,6 +156,18 @@ extension ViewController {
             closeButton.heightAnchor.constraint(equalToConstant: 40),
             closeButton.widthAnchor.constraint(equalToConstant: 40),
             
+            playerPointDiscription.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            playerPointDiscription.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25),
+            
+            computerPointDiscription.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            computerPointDiscription.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25),
+                        
+            playerPoint.topAnchor.constraint(equalTo: playerPointDiscription.bottomAnchor, constant: 20),
+            playerPoint.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60),
+                        
+            computerPoint.topAnchor.constraint(equalTo: computerPointDiscription.bottomAnchor, constant: 20),
+            computerPoint.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60),
+            
             syncImage.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 210),
             syncImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             syncImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
@@ -158,8 +179,6 @@ extension ViewController {
             syncContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             syncContainer.heightAnchor.constraint(equalToConstant: 100),
             
-            playerPointDiscription.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            playerPointDiscription.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25)
         ])
     }
 }
