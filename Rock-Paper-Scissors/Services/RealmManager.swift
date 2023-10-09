@@ -24,4 +24,15 @@ class RealmManager {
             realm.add(model)
         }
     }
+    
+    func getUserStatisticData() -> Results<UserStatisticModel> {
+        realm.objects(UserStatisticModel.self)
+    }
+    
+    func saveUserStatisticData(_ model: UserStatisticModel) {
+        try! realm.write {
+            realm.add(model)
+        }
+    }
+    
 }

@@ -39,6 +39,8 @@ class LoginPasswordView: UIView {
         addSubview(loginTextField)
         addSubview(passwordLabel)
         addSubview(passwordTextField)
+        
+        passwordTextField.isSecureTextEntry = true
     }
     
     func getLoginData() -> String {

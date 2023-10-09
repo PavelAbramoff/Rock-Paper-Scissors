@@ -31,6 +31,7 @@
 		3A2E19BF2AD162E100BA4BA0 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19BE2AD162E100BA4BA0 /* UIViewController + Extensions.swift */; };
 		3A2E19C12AD182CC00BA4BA0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19C02AD182CC00BA4BA0 /* UserSettings.swift */; };
 		3A2E19C72AD19DCF00BA4BA0 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19C62AD19DCF00BA4BA0 /* RulesViewController.swift */; };
+		3A2E19F82AD290AD00BA4BA0 /* UserStatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E19F72AD290AD00BA4BA0 /* UserStatisticModel.swift */; };
 		3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */; };
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
@@ -65,6 +66,7 @@
 		3A2E19BE2AD162E100BA4BA0 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		3A2E19C02AD182CC00BA4BA0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		3A2E19C62AD19DCF00BA4BA0 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		3A2E19F72AD290AD00BA4BA0 /* UserStatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatisticModel.swift; sourceTree = "<group>"; };
 		3A9724842AC0B1F40091E33B /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		3A2E198F2AC9C77900BA4BA0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E19F72AD290AD00BA4BA0 /* UserStatisticModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				3A2E19BF2AD162E100BA4BA0 /* UIViewController + Extensions.swift in Sources */,
 				3A2E198A2AC9C26400BA4BA0 /* MainTabBarController.swift in Sources */,
 				3A2E19912AC9C7AC00BA4BA0 /* StatisticViewController.swift in Sources */,
+				3A2E19F82AD290AD00BA4BA0 /* UserStatisticModel.swift in Sources */,
 				3A2E19BD2AD15BA800BA4BA0 /* CloseButton.swift in Sources */,
 				3A2E19842AC9C1AF00BA4BA0 /* UIStackView + Extensions.swift in Sources */,
 				12EF0D632ACD3AD9002519C4 /* UIView + Rotation.swift in Sources */,
