@@ -16,6 +16,42 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private let closeButton = CloseButton()
     
+    private let playerPointDiscription: UILabel = {
+        let label = UILabel()
+        label.text = "Your Point"
+        label.textColor = .blue
+        label.font = .robotoBold48()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let computerPointDiscription: UILabel = {
+        let label = UILabel()
+        label.text = "Computer Point"
+        label.textColor = .blue
+        label.font = .robotoBold48()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let playerPoint: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textColor = .blue
+        label.font = .robotoBold48()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let computerPoint: UILabel = {
+        let label = UILabel()
+        label.text = "0"
+        label.textColor = .blue
+        label.font = .robotoBold48()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private let paperButton = MatchButton(text: "Paper", countRounds: 1)
     private let rockButton = MatchButton(text: "Rock", countRounds: 1)
     private let scissorsButton = MatchButton(text: "Scissors", countRounds: 1)
@@ -61,6 +97,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         scissorsButton.addGestureRecognizer(syncTapButton)
     }
     
+    // MARK: ButtonActions
+    
+    private func rockSelected(_ sender: Any) {
+        
+        let randomCelected = Int(arc4random_uniform(3))
+        let pcCelected = array[randomCelected]
+        
+        if pcCelected == "rock2" {
+            
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -110,6 +157,9 @@ extension ViewController {
             syncContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             syncContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             syncContainer.heightAnchor.constraint(equalToConstant: 100),
+            
+            playerPointDiscription.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            playerPointDiscription.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25)
         ])
     }
 }
