@@ -116,13 +116,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let syncTapView = UITapGestureRecognizer(target: self, action: #selector(handleSyncTap(sender:)))
         syncTapView.delegate = self
         
-        syncImage.addGestureRecognizer(syncTapView)
         
+            syncImage.addGestureRecognizer(syncTapView)
+
     }
     
     // MARK: ButtonActions
     
     @objc private func rockButtonTapped(button: MatchButton) {
+        gamesCounter += 1
         startSpinning()
         let randomSelected = Int(arc4random_uniform(3))
         let pcSelected = array[randomSelected]
@@ -141,6 +143,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc private func scissorsButtonTapped(button: MatchButton) {
+        gamesCounter += 1
         startSpinning()
         let randomSelected = Int(arc4random_uniform(3))
         let pcSelected = array[randomSelected]
@@ -159,6 +162,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc private func paperButtonTapped(button: MatchButton) {
+        gamesCounter += 1
         startSpinning()
         let randomSelected = Int(arc4random_uniform(3))
         let pcSelected = array[randomSelected]
@@ -180,18 +184,56 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    func whoIsWon() -> String {
+        var result = ""
+        if pcPoints > myPoints {
+            result = "PC won!😓"
+        }
+        if myPoints > pcPoints {
+            result = "You won! 🥇"
+        }
+        if myPoints == pcPoints {
+            result = "Nobody won 🤷‍♂️"
+        }
+          return result
+    }
+    
+    func saveStatistic() {
+        let username = UserSettings.userName
+        let roundsNumber = UserSettings.roundsNumber
+        let victorysNumber = myPoints
+        
+        let newStatRecord = UserStatisticModel()
+        
+        newStatRecord.username = username
+        newStatRecord.gamesNumber = roundsNumber
+        newStatRecord.winsNumber = victorysNumber
+        
+        RealmManager.shared.saveUserStatisticData(newStatRecord)
+    }
+    
     func recordMyPoints() {
         myPoints += 1
-        gamesCounter += 1
-        roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
-        playerPoint.text = String(myPoints)
+        if gamesCounter < UserSettings.roundsNumber {
+            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+            playerPoint.text = String(myPoints)
+        } else {
+            showAlert(title: "Game over", message: "\(whoIsWon())")
+            saveStatistic()
+            syncContainer.isHidden = true
+        }
     }
     
     func recordPcPoinnts() {
         pcPoints += 1
-        gamesCounter += 1
-        roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
-        computerPoint.text = String(pcPoints)
+        if gamesCounter < UserSettings.roundsNumber {
+            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+            computerPoint.text = String(pcPoints)
+        } else {
+            showAlert(title: "Game over", message: "\(whoIsWon())")
+            saveStatistic()
+            syncContainer.isHidden = true
+        }
     }
     
     func startSpinning() {
