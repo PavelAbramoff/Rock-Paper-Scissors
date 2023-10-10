@@ -3,47 +3,48 @@
 //  Rock-Paper-Scissors
 //
 //  Created by Pavel on 2023-09-23.
-//
 
 import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Variables
+    
     var myPoints = 0
     var pcPoints = 0
-    let array = ["rock2","paper2","scissors2"]
+    let array = ["rock","paper","scissors"]
     
     private let closeButton = CloseButton()
     
     private let playerPointDiscription: UILabel = {
-                let label = UILabel()
-                label.text = "Your Points"
-                label.textColor = .blue
-                label.font = .robotoBold20()
-                label.layer.cornerRadius = 10
-                label.addShadowOnView()
-                label.translatesAutoresizingMaskIntoConstraints = false
-                return label
-            }()
-
+        let label = UILabel()
+        label.text = "Your Points"
+        label.textColor = .blue
+        label.font = .robotoBold20()
+        label.layer.cornerRadius = 10
+        label.addShadowOnView()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private let computerPointDiscription: UILabel = {
-                let label = UILabel()
-                label.text = "Computer Points"
-                label.textColor = .blue
-                label.font = .robotoBold20()
-                label.layer.cornerRadius = 10
-                label.addShadowOnView()
-                label.translatesAutoresizingMaskIntoConstraints = false
-                return label
-            }()
-
+        let label = UILabel()
+        label.text = "Computer Points"
+        label.textColor = .blue
+        label.font = .robotoBold20()
+        label.layer.cornerRadius = 10
+        label.addShadowOnView()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     private let playerPoint: UILabel = {
         let label = UILabel()
         label.text = "0"
         label.textColor = .blue
         label.font = .robotoBold48()
+        label.layer.cornerRadius = 10
+        label.addShadowOnView()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,6 +54,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         label.text = "0"
         label.textColor = .blue
         label.font = .robotoBold48()
+        label.layer.cornerRadius = 10
+        label.addShadowOnView()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -74,11 +77,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         spacing:25,
         distribution: .fillEqually)
     
-    let tapSyncMethod = "handleSyncTap:"
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,6 +92,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         view.backgroundColor = .white
         
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        rockButton.addTarget(self, action: #selector(rockButtonTapped), for: .touchUpInside)
+        scissorsButton.addTarget(self, action: #selector(scissorsButtonTapped), for: .touchUpInside)
+        paperButton.addTarget(self, action: #selector(paperButtonTapped), for: .touchUpInside)
         
         let syncTapButton = UITapGestureRecognizer(target: self, action: #selector(handleSyncTap(sender:)))
         syncTapButton.delegate = self
@@ -101,26 +102,77 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         syncTapView.delegate = self
         
         syncImage.addGestureRecognizer(syncTapView)
-        paperButton.addGestureRecognizer(syncTapButton)
-        rockButton.addGestureRecognizer(syncTapButton)
-        scissorsButton.addGestureRecognizer(syncTapButton)
+        
     }
     
     // MARK: ButtonActions
     
-    private func rockSelected(_ sender: Any) {
+    @objc private func rockButtonTapped(button: MatchButton) {
+        startSpinning()
+        let randomSelected = Int(arc4random_uniform(3))
+        let pcSelected = array[randomSelected]
         
-        let randomCelected = Int(arc4random_uniform(3))
-        let pcCelected = array[randomCelected]
-        
-        if pcCelected == "rock2" {
+        if pcSelected == "rock" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningRock)
             
+        } else if pcSelected == "paper" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningPaper)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordPcPoinnts)
+            
+        } else if pcSelected == "scissors" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordMyPoints)
         }
     }
     
+    @objc private func scissorsButtonTapped(button: MatchButton) {
+        startSpinning()
+        let randomSelected = Int(arc4random_uniform(3))
+        let pcSelected = array[randomSelected]
+        
+        if pcSelected == "rock" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningRock)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordMyPoints)
+            
+        } else if pcSelected == "paper" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningPaper)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordPcPoinnts)
+            
+        } else if pcSelected == "scissors" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
+        }
+    }
+    
+    @objc private func paperButtonTapped(button: MatchButton) {
+        startSpinning()
+        let randomSelected = Int(arc4random_uniform(3))
+        let pcSelected = array[randomSelected]
+        
+        if pcSelected == "rock" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningRock)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordMyPoints)
+            
+        } else if pcSelected == "paper" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningPaper)
+            
+        } else if pcSelected == "scissors" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordPcPoinnts)
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func recordMyPoints() {
+        myPoints += 1
+        playerPoint.text = String(myPoints)
+    }
+    
+    func recordPcPoinnts() {
+        pcPoints += 1
+        computerPoint.text = String(pcPoints)
     }
     
     func startSpinning() {
@@ -128,16 +180,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         syncImage.startRotating()
     }
     
-    func stopSpinning() {
+    func stopSpinningRock() {
         syncImage.stopRotating()
         syncImage.image = UIImage(named:"rock2")
+    }
+    
+    func stopSpinningPaper() {
+        syncImage.stopRotating()
+        syncImage.image = UIImage(named:"paper2")
+    }
+    
+    func stopSpinningScissorsr() {
+        syncImage.stopRotating()
+        syncImage.image = UIImage(named:"scissors2")
     }
     
     @objc func handleSyncTap(sender: UITapGestureRecognizer? = nil) {
         startSpinning()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            self.stopSpinning()
+            self.stopSpinningRock()
         }
     }
     
@@ -145,6 +207,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         dismiss(animated: true)
     }
 }
+
+// MARK: Extansions
 
 extension ViewController {
     
@@ -161,10 +225,10 @@ extension ViewController {
             
             computerPointDiscription.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
             computerPointDiscription.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25),
-                        
+            
             playerPoint.topAnchor.constraint(equalTo: playerPointDiscription.bottomAnchor, constant: 20),
             playerPoint.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60),
-                        
+            
             computerPoint.topAnchor.constraint(equalTo: computerPointDiscription.bottomAnchor, constant: 20),
             computerPoint.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60),
             
@@ -182,5 +246,3 @@ extension ViewController {
         ])
     }
 }
-
-
