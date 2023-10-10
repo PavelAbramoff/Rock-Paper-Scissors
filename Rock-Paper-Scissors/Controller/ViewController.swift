@@ -12,9 +12,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var myPoints = 0
     var pcPoints = 0
+    
+    var gamesCounter = 0
+    
     let array = ["rock","paper","scissors"]
     
     private let closeButton = CloseButton()
+    
+    private let roundCounterLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Round 0 from \(UserSettings.roundsNumber)"
+        label.textColor = .specialMidnightBlue
+        label.font = .robotoBold24()
+        label.layer.cornerRadius = 10
+        label.addShadowOnView()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     private let playerPointDiscription: UILabel = {
         let label = UILabel()
@@ -81,6 +95,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         view.addSubview(closeButton)
+        view.addSubview(roundCounterLabel)
         view.addSubview(playerPointDiscription)
         view.addSubview(computerPointDiscription)
         view.addSubview(playerPoint)
@@ -167,11 +182,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func recordMyPoints() {
         myPoints += 1
+        gamesCounter += 1
+        roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
         playerPoint.text = String(myPoints)
     }
     
     func recordPcPoinnts() {
         pcPoints += 1
+        gamesCounter += 1
+        roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
         computerPoint.text = String(pcPoints)
     }
     
@@ -220,10 +239,14 @@ extension ViewController {
             closeButton.heightAnchor.constraint(equalToConstant: 40),
             closeButton.widthAnchor.constraint(equalToConstant: 40),
             
-            playerPointDiscription.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            roundCounterLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
+            roundCounterLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            roundCounterLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            playerPointDiscription.topAnchor.constraint(equalTo: roundCounterLabel.bottomAnchor, constant: 20),
             playerPointDiscription.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25),
             
-            computerPointDiscription.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            computerPointDiscription.topAnchor.constraint(equalTo: roundCounterLabel.bottomAnchor, constant: 20),
             computerPointDiscription.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25),
             
             playerPoint.topAnchor.constraint(equalTo: playerPointDiscription.bottomAnchor, constant: 20),

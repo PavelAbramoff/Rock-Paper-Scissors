@@ -90,7 +90,7 @@ class SetupViewController: UIViewController {
         button.tintColor = .blue
         actionView.presentView(viewController: self)
         guard let rounds = button.countRounds else { return }
-        countRounds = rounds
+        UserSettings.roundsNumber = rounds
         let delayInSeconds: TimeInterval = 4
         DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
             self.actionView.removeView()
@@ -100,7 +100,7 @@ class SetupViewController: UIViewController {
             gameVC.modalPresentationStyle = .fullScreen
             self.present(gameVC, animated: true)
         }
-        print(countRounds)
+        print(UserSettings.roundsNumber)
     }
 }
 

@@ -11,4 +11,5 @@ class UserSettings {
     static var userName = ""
     static var isUserAuthorised = false
     static var isThisFirstRunning = true
+    static var roundsNumber = 0
 }
