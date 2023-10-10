@@ -18,8 +18,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private let playerPointDiscription: UILabel = {
         let label = UILabel()
-        label.text = "Your Points"
-        label.textColor = .blue
+        label.text = "\(UserSettings.userName)'s Points"
+        label.textColor = .specialBlue
         label.font = .robotoBold20()
         label.layer.cornerRadius = 10
         label.addShadowOnView()
@@ -30,7 +30,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private let computerPointDiscription: UILabel = {
         let label = UILabel()
         label.text = "Computer Points"
-        label.textColor = .blue
+        label.textColor = .specialBlue
         label.font = .robotoBold20()
         label.layer.cornerRadius = 10
         label.addShadowOnView()
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private let playerPoint: UILabel = {
         let label = UILabel()
         label.text = "0"
-        label.textColor = .blue
+        label.textColor = .specialMidnightBlue
         label.font = .robotoBold48()
         label.layer.cornerRadius = 10
         label.addShadowOnView()
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private let computerPoint: UILabel = {
         let label = UILabel()
         label.text = "0"
-        label.textColor = .blue
+        label.textColor = .specialMidnightBlue
         label.font = .robotoBold48()
         label.layer.cornerRadius = 10
         label.addShadowOnView()
@@ -60,9 +60,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return label
     }()
     
-    private let paperButton = MatchButton(text: "Paper", countRounds: 1)
-    private let rockButton = MatchButton(text: "Rock", countRounds: 1)
-    private let scissorsButton = MatchButton(text: "Scissors", countRounds: 1)
+    private let paperButton = MatchButton(text: "🤚", countRounds: 1)
+    private let rockButton = MatchButton(text: "👊", countRounds: 1)
+    private let scissorsButton = MatchButton(text: "✌️", countRounds: 1)
     
     private let syncImage: UIImageView = {
         let image = UIImageView()
