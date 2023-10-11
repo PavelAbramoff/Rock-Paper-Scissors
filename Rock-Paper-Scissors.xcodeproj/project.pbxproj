@@ -36,6 +36,9 @@
 		3A9724872AC0B2390091E33B /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */; };
 		3A97248B2AC0B7F20091E33B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */; };
 		3A97248C2AC0B7F20091E33B /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */; };
+		785FF2032AD69B550028C3D3 /* StatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FF2022AD69B550028C3D3 /* StatTableView.swift */; };
+		785FF2062AD69C3E0028C3D3 /* StatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FF2052AD69C3E0028C3D3 /* StatTableViewCell.swift */; };
+		785FF2082AD722BA0028C3D3 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785FF2072AD722BA0028C3D3 /* HeaderTableViewCell.swift */; };
 		78A19AD92ACAE93F009471CE /* UIView + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AD82ACAE93F009471CE /* UIView + Extentions.swift */; };
 		78A19AE72ACC2924009471CE /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AE62ACC2924009471CE /* ActionView.swift */; };
 		78A19AE92ACC2950009471CE /* MatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A19AE82ACC2950009471CE /* MatchButton.swift */; };
@@ -71,6 +74,9 @@
 		3A9724862AC0B2390091E33B /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		3A9724892AC0B7F20091E33B /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		3A97248A2AC0B7F20091E33B /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		785FF2022AD69B550028C3D3 /* StatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTableView.swift; sourceTree = "<group>"; };
+		785FF2052AD69C3E0028C3D3 /* StatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTableViewCell.swift; sourceTree = "<group>"; };
+		785FF2072AD722BA0028C3D3 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		78A19AD82ACAE93F009471CE /* UIView + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extentions.swift"; sourceTree = "<group>"; };
 		78A19AE62ACC2924009471CE /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionView.swift; path = "Rock-Paper-Scissors/SetupModule/View/ActionView.swift"; sourceTree = SOURCE_ROOT; };
 		78A19AE82ACC2950009471CE /* MatchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchButton.swift; sourceTree = "<group>"; };
@@ -216,6 +222,8 @@
 		3A2E198E2AC9C76700BA4BA0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				785FF2042AD69C150028C3D3 /* Cell */,
+				785FF2022AD69B550028C3D3 /* StatTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +351,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		785FF2042AD69C150028C3D3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				785FF2052AD69C3E0028C3D3 /* StatTableViewCell.swift */,
+				785FF2072AD722BA0028C3D3 /* HeaderTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,9 +456,12 @@
 				3A2E19C12AD182CC00BA4BA0 /* UserSettings.swift in Sources */,
 				78A19AE92ACC2950009471CE /* MatchButton.swift in Sources */,
 				78A19AE72ACC2924009471CE /* ActionView.swift in Sources */,
+				785FF2062AD69C3E0028C3D3 /* StatTableViewCell.swift in Sources */,
+				785FF2032AD69B550028C3D3 /* StatTableView.swift in Sources */,
 				3A9724852AC0B1F40091E33B /* UIColor + Extensions.swift in Sources */,
 				12473AE92ABEC59000BFCFD9 /* AppDelegate.swift in Sources */,
 				3A2E19832AC9C1AF00BA4BA0 /* UILabel + Extensions.swift in Sources */,
+				785FF2082AD722BA0028C3D3 /* HeaderTableViewCell.swift in Sources */,
 				3A2E19962AC9C8DD00BA4BA0 /* SetupViewController.swift in Sources */,
 				3A2E19C72AD19DCF00BA4BA0 /* RulesViewController.swift in Sources */,
 				3A2E19B72AD085F000BA4BA0 /* RealmManager.swift in Sources */,

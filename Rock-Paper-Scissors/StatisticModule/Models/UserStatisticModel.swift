@@ -13,3 +13,10 @@ class UserStatisticModel: Object {
     @Persisted var gamesNumber: Int = 0
     @Persisted var winsNumber: Int = 0
 }
+
+
+struct LeaderboardEntry {
+    var name: String
+    var score: Int
+    var rank: Int
+}
