@@ -116,8 +116,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let syncTapView = UITapGestureRecognizer(target: self, action: #selector(handleSyncTap(sender:)))
         syncTapView.delegate = self
         
-        
-            syncImage.addGestureRecognizer(syncTapView)
+        syncImage.addGestureRecognizer(syncTapView)
 
     }
     

@@ -69,7 +69,7 @@ class MainTabBarController: UITabBarController {
 
         items[0].image = UIImage(systemName: "gamecontroller.fill")
         items[1].image = UIImage(systemName: "trophy.fill")
-        items[2].image = UIImage(systemName: "doc.questionmark.fill")
+        items[2].image = UIImage(systemName: "pencil.and.outline")
 
         
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont(name: "Roboto-Bold", size: 14) as Any], for: .normal)
