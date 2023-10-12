@@ -34,5 +34,14 @@ class RealmManager {
             realm.add(model)
         }
     }
-    
+    func getUserWins(name: String) -> Int {
+         let allStatisticGames = RealmManager.shared.getUserStatisticData()
+         
+        let predicate = NSPredicate(format: "username = '\(name)'")
+        let filteredArray = allStatisticGames.filter(predicate).sorted(byKeyPath: "winsNumber").map{ $0 }
+        let victoris = filteredArray.reduce(0) { (result, number) in
+            return result + number.winsNumber
+        }
+        return victoris
+    }
 }

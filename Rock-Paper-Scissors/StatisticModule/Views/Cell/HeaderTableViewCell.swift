@@ -15,7 +15,6 @@ class HeaderTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "PLACE"
         label.textColor = .specialMidnightBlue
-        label.backgroundColor = .green
         label.textAlignment = .center
         label.font = .robotoBold16()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +24,6 @@ class HeaderTableViewCell: UITableViewCell {
     private let usernameLabel: UILabel = {
         let label = UILabel()
         label.text = "USERNAME"
-        label.backgroundColor = .yellow
         label.textColor = .specialMidnightBlue
         label.font = .robotoBold16()
         label.textAlignment = .center
@@ -38,7 +36,6 @@ class HeaderTableViewCell: UITableViewCell {
     private let victoriesLabel: UILabel = {
         let label = UILabel()
         label.text = "VICTORIES"
-        label.backgroundColor = .red
         label.textColor = .specialMidnightBlue
         label.font = .robotoBold16()
         label.textAlignment = .center
@@ -60,7 +57,8 @@ class HeaderTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        backgroundColor = .clear
+        backgroundColor = .specialGrayBackground
+        alpha = 0.8
         selectionStyle = .none
         addSubview(placeLabel)
         addSubview(usernameLabel)

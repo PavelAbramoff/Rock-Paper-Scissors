@@ -123,7 +123,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: ButtonActions
     
     @objc private func rockButtonTapped(button: MatchButton) {
-        gamesCounter += 1
         startSpinning()
         let randomSelected = Int(arc4random_uniform(3))
         let pcSelected = array[randomSelected]
@@ -132,28 +131,31 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningRock)
             
         } else if pcSelected == "paper" {
+            gamesCounter += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningPaper)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordPcPoinnts)
             
         } else if pcSelected == "scissors" {
+            gamesCounter += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordMyPoints)
         }
     }
     
     @objc private func scissorsButtonTapped(button: MatchButton) {
-        gamesCounter += 1
         startSpinning()
         let randomSelected = Int(arc4random_uniform(3))
         let pcSelected = array[randomSelected]
         
         if pcSelected == "rock" {
+            gamesCounter += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningRock)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordMyPoints)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordPcPoinnts)
             
         } else if pcSelected == "paper" {
+            gamesCounter += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningPaper)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordPcPoinnts)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordMyPoints)
             
         } else if pcSelected == "scissors" {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
@@ -161,12 +163,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc private func paperButtonTapped(button: MatchButton) {
-        gamesCounter += 1
         startSpinning()
         let randomSelected = Int(arc4random_uniform(3))
         let pcSelected = array[randomSelected]
         
         if pcSelected == "rock" {
+            gamesCounter += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningRock)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordMyPoints)
             
@@ -174,6 +176,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningPaper)
             
         } else if pcSelected == "scissors" {
+            gamesCounter += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: recordPcPoinnts)
         }
@@ -213,10 +216,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func recordMyPoints() {
         myPoints += 1
-        if gamesCounter < UserSettings.roundsNumber {
+        if myPoints <= UserSettings.roundsNumber / 2 {
             roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
             playerPoint.text = String(myPoints)
         } else {
+            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+            playerPoint.text = String(myPoints)
             showAlert(title: "Game over", message: "\(whoIsWon())")
             saveStatistic()
             syncContainer.isHidden = true
@@ -225,10 +230,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func recordPcPoinnts() {
         pcPoints += 1
-        if gamesCounter < UserSettings.roundsNumber {
+        if pcPoints <= UserSettings.roundsNumber / 2 {
             roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
             computerPoint.text = String(pcPoints)
         } else {
+            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+            computerPoint.text = String(pcPoints)
             showAlert(title: "Game over", message: "\(whoIsWon())")
             saveStatistic()
             syncContainer.isHidden = true

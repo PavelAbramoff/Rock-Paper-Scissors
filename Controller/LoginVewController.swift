@@ -95,10 +95,6 @@ class LoginVewController: UIViewController {
                 tabBarController?.present(
                     tabBar,
                     animated: true)
-                
-                
-                
-                
             } else {
                 print("Ошибка авторизации пользователя: неверное имя пользователя или пароль")
 //                UserSettings.isUserAuthorised = false

@@ -84,6 +84,9 @@ class RegistrationViewController: UIViewController {
             UserSettings.isUserAuthorised = true
             UserSettings.isThisFirstRunning = false
             
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(true, forKey: "isUserAuthorised")
+            userDefaults.set(username, forKey: "username")
             presentingViewController?.dismiss(animated: true)
             
             let tabBar = MainTabBarController()
