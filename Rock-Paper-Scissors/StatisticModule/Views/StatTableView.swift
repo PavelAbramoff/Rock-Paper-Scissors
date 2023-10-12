@@ -25,7 +25,7 @@ class StatTableView: UITableView {
     }
     
     private func configure() {
-        backgroundColor = .none
+        backgroundColor = .clear
         separatorStyle = .singleLine
         separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0) //реализация стандартного разделителя
         bounces = false

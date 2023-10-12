@@ -22,7 +22,9 @@ class SetupViewController: UIViewController {
     
     private let userNameLabel: UILabel = {
         let label = UILabel()
-        label.text = UserSettings.userName
+        let userDefaults = UserDefaults.standard
+        let userName = userDefaults.string(forKey: "username")
+        label.text = userName
         label.font = .robotoBold24()
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.6

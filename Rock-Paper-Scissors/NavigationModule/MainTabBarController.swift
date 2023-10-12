@@ -30,12 +30,14 @@ class MainTabBarController: UITabBarController {
     
     private func setupItems() {
         
-        if UserSettings.isUserAuthorised {
+        let userDefaults = UserDefaults.standard
+        let isUserAuthorised = userDefaults.bool(forKey: "isUserAuthorised")
+        
+        if isUserAuthorised {
             showIfUserAuthorised()
         } else {
             showIfUserNotAuthorised()
         }
-        
     }
     
     private func showIfUserNotAuthorised() {
