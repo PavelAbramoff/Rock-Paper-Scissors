@@ -68,6 +68,11 @@ class StatTableViewCell: UITableViewCell {
         nameLabel.text = model.name
         scoreLabel.text = "\(model.score)"
         rankLabel.text = "\(model.rank)"
+        if model.name == UserSettings.userName {
+            backgroundColor = .specialLightYellow
+        } else {
+            backgroundColor = .clear
+        }
     }
 }
 

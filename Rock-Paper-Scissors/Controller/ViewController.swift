@@ -21,7 +21,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private let roundCounterLabel: UILabel = {
         let label = UILabel()
-        label.text = "Round 0 from \(UserSettings.roundsNumber)"
+        label.text = "Game up to \(UserSettings.roundsNumber) points"
+        label.textColor = .specialMidnightBlue
+        label.font = .robotoBold24()
+        label.layer.cornerRadius = 10
+        label.addShadowOnView()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let roundLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Round 1"
         label.textColor = .specialMidnightBlue
         label.font = .robotoBold24()
         label.layer.cornerRadius = 10
@@ -32,7 +43,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private let playerPointDiscription: UILabel = {
         let label = UILabel()
-        label.text = "\(UserSettings.userName)'s Points"
+        let userDefaults = UserDefaults.standard
+        let userName = userDefaults.string(forKey: "username") ?? "Unknown"
+        label.text = "\(userName)'s Points"
         label.textColor = .specialBlue
         label.font = .robotoBold20()
         label.layer.cornerRadius = 10
@@ -96,6 +109,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         view.addSubview(closeButton)
         view.addSubview(roundCounterLabel)
+        view.addSubview(roundLabel)
         view.addSubview(playerPointDiscription)
         view.addSubview(computerPointDiscription)
         view.addSubview(playerPoint)
@@ -104,7 +118,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         view.addSubview(syncContainer)
         
         setConstraint()
-        view.backgroundColor = .white
+        view.backgroundColor = .specialBackground
         
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         rockButton.addTarget(self, action: #selector(rockButtonTapped), for: .touchUpInside)
@@ -116,8 +130,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let syncTapView = UITapGestureRecognizer(target: self, action: #selector(handleSyncTap(sender:)))
         syncTapView.delegate = self
         
-        syncImage.addGestureRecognizer(syncTapView)
-
+        
+            syncImage.addGestureRecognizer(syncTapView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        roundLabel.isHidden = gamesCounter == 0
     }
     
     // MARK: ButtonActions
@@ -202,7 +220,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func saveStatistic() {
         let username = UserSettings.userName
-        let roundsNumber = UserSettings.roundsNumber
+        let roundsNumber = gamesCounter
         let victorysNumber = myPoints
         
         let newStatRecord = UserStatisticModel()
@@ -216,11 +234,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func recordMyPoints() {
         myPoints += 1
-        if myPoints <= UserSettings.roundsNumber / 2 {
-            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+        if myPoints < UserSettings.roundsNumber {
+            roundLabel.text = "Round \(gamesCounter)"
             playerPoint.text = String(myPoints)
         } else {
-            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+            roundLabel.text = "Round \(gamesCounter)"
             playerPoint.text = String(myPoints)
             showAlert(title: "Game over", message: "\(whoIsWon())")
             saveStatistic()
@@ -230,11 +248,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func recordPcPoinnts() {
         pcPoints += 1
-        if pcPoints <= UserSettings.roundsNumber / 2 {
-            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+        if pcPoints < UserSettings.roundsNumber {
+            roundLabel.text = "Round \(gamesCounter)"
             computerPoint.text = String(pcPoints)
         } else {
-            roundCounterLabel.text = "Round \(gamesCounter) from \(UserSettings.roundsNumber)"
+            roundLabel.text = "Round \(gamesCounter)"
             computerPoint.text = String(pcPoints)
             showAlert(title: "Game over", message: "\(whoIsWon())")
             saveStatistic()
@@ -243,6 +261,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func startSpinning() {
+        roundLabel.isHidden = false
         syncImage.image = UIImage(named:"fon")
         syncImage.startRotating()
     }
@@ -291,10 +310,14 @@ extension ViewController {
             roundCounterLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             roundCounterLabel.heightAnchor.constraint(equalToConstant: 30),
             
-            playerPointDiscription.topAnchor.constraint(equalTo: roundCounterLabel.bottomAnchor, constant: 20),
+            roundLabel.topAnchor.constraint(equalTo: roundCounterLabel.bottomAnchor, constant: 20),
+            roundLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            roundLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            playerPointDiscription.topAnchor.constraint(equalTo: roundLabel.bottomAnchor, constant: 10),
             playerPointDiscription.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25),
             
-            computerPointDiscription.topAnchor.constraint(equalTo: roundCounterLabel.bottomAnchor, constant: 20),
+            computerPointDiscription.topAnchor.constraint(equalTo: roundLabel.bottomAnchor, constant: 10),
             computerPointDiscription.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25),
             
             playerPoint.topAnchor.constraint(equalTo: playerPointDiscription.bottomAnchor, constant: 20),
@@ -303,7 +326,7 @@ extension ViewController {
             computerPoint.topAnchor.constraint(equalTo: computerPointDiscription.bottomAnchor, constant: 20),
             computerPoint.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60),
             
-            syncImage.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 210),
+            syncImage.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 230),
             syncImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             syncImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             syncImage.heightAnchor.constraint(equalToConstant: 300),

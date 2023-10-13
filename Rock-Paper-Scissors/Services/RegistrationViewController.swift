@@ -48,7 +48,7 @@ class RegistrationViewController: UIViewController {
        
     }
     private func setupViews() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .specialBackground
         view.addSubview(closeButton)
         view.addSubview(logoView)
         view.addSubview(welcomeLabel)

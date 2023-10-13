@@ -39,9 +39,13 @@ class RealmManager {
          
         let predicate = NSPredicate(format: "username = '\(name)'")
         let filteredArray = allStatisticGames.filter(predicate).sorted(byKeyPath: "winsNumber").map{ $0 }
-        let victoris = filteredArray.reduce(0) { (result, number) in
+        let sumWins = filteredArray.reduce(0) { (result, number) in
             return result + number.winsNumber
         }
-        return victoris
+        let sumGames = filteredArray.reduce(0) { (result, number) in
+            return result + number.gamesNumber
+        }
+        let winningPercentage = sumWins * 100 / sumGames
+        return winningPercentage
     }
 }

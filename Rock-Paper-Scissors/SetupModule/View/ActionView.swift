@@ -63,7 +63,7 @@ class ActionView: UIView {
                                     y: 200,
                                     width: parentView.frame.width - 20,
                                     height: 200)
-        imageViewOne.image = UIImage(named: "sab-ziro")
+        imageViewOne.image = UIImage(named: "mario")
         imageViewOne.contentMode = .scaleAspectFill
         imageViewOne.clipsToBounds = true
         imageViewOne.layer.cornerRadius = imageViewOne.frame.height / 2
@@ -73,7 +73,7 @@ class ActionView: UIView {
                                     y: imageViewOne.frame.maxY + 50,
                                     width: parentView.frame.width - 20,
                                     height: 200)
-        imageViewTwo.image = UIImage(named: "scorpion")
+        imageViewTwo.image = UIImage(named: "robot")
         imageViewTwo.contentMode = .scaleAspectFill
         imageViewTwo.clipsToBounds = true
         imageViewTwo.layer.cornerRadius = imageViewTwo.frame.height / 2
