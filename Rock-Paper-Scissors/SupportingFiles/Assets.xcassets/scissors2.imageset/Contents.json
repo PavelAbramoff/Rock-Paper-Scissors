@@ -1,12 +1,10 @@
 {
   "images" : [
     {
-      "filename" : "makas.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "makas@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

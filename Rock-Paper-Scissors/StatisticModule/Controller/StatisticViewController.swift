@@ -12,11 +12,12 @@ class StatisticViewController: UIViewController {
     private var statisticArray = [LeaderboardEntry]()
     
     private var mockArray: [LeaderboardEntry] =
-    [LeaderboardEntry(name: "Anigilytor", score: 3, rank: 0),
-     LeaderboardEntry(name: "Viking", score: 7, rank: 0),
-     LeaderboardEntry(name: "Superman", score: 9, rank: 0),
-     LeaderboardEntry(name: "Dred", score: 12, rank: 0),
-     LeaderboardEntry(name: "Winer", score: 50, rank: 0),]
+    [LeaderboardEntry(name: "Anigilytor", score: 30, rank: 0),
+     LeaderboardEntry(name: "Viking", score: 35, rank: 0),
+     LeaderboardEntry(name: "Superman", score: 40, rank: 0),
+     LeaderboardEntry(name: "Dred", score: 45, rank: 0),
+     LeaderboardEntry(name: "Winer", score: 50, rank: 0),
+     LeaderboardEntry(name: "Chiter", score: 70, rank: 0)]
     
     private let leaderBoardLabel: UILabel = {
         let label = UILabel()
@@ -28,22 +29,6 @@ class StatisticViewController: UIViewController {
         label.minimumScaleFactor = 0.6
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    private lazy var segmentedControl: UISegmentedControl = {
-        let segment = UISegmentedControl(items: ["Today", "Weak", "All Time"])
-        segment.selectedSegmentIndex = 0
-        segment.backgroundColor = .specialBlue
-        segment.selectedSegmentTintColor = .specialYellow
-        let font = UIFont.robotoMedium16()
-        segment.setTitleTextAttributes([.foregroundColor: UIColor.white,
-                                        .font: font as Any],
-                                       for: .normal)
-        segment.setTitleTextAttributes([.foregroundColor: UIColor.specialGrayText,
-                                        .font: font as Any],
-                                       for: .selected)
-        segment.translatesAutoresizingMaskIntoConstraints = false
-        return segment
     }()
     
     private let statisticTableView = StatTableView()
@@ -59,15 +44,9 @@ class StatisticViewController: UIViewController {
         updateStatistic()
     }
     
-    override func viewDidLayoutSubviews() {
-      
-    }
-    
     private func setupViews() {
         view.backgroundColor = .specialBackground
         view.addSubview(leaderBoardLabel)
-        view.addSubview(segmentedControl)
-        segmentedControl.addTarget(self, action: #selector(segmentedControlTapped), for: .valueChanged)
         view.addSubview(statisticTableView)
     }
     
@@ -81,11 +60,6 @@ class StatisticViewController: UIViewController {
         statisticTableView.setStatisticArray(statisticArray)
         statisticTableView.reloadData()
     }
-    
-    @objc private func segmentedControlTapped() {
-        updateStatistic()
-    }
-    
 }
 
 extension StatisticViewController {
@@ -96,15 +70,10 @@ extension StatisticViewController {
             leaderBoardLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             leaderBoardLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
-            segmentedControl.topAnchor.constraint(equalTo: leaderBoardLabel.bottomAnchor, constant: 20),
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            segmentedControl.heightAnchor.constraint(equalToConstant: 30),
-            
-            statisticTableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 50),
+            statisticTableView.topAnchor.constraint(equalTo: leaderBoardLabel.bottomAnchor, constant: 50),
             statisticTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             statisticTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            statisticTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
+            statisticTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
         ])
     }
 }

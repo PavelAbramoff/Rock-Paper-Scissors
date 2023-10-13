@@ -35,7 +35,7 @@ class HeaderTableViewCell: UITableViewCell {
     
     private let victoriesLabel: UILabel = {
         let label = UILabel()
-        label.text = "VICTORIES"
+        label.text = "Wins %"
         label.textColor = .specialMidnightBlue
         label.font = .robotoBold16()
         label.textAlignment = .center

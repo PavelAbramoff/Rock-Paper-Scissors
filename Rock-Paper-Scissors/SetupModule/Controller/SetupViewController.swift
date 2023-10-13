@@ -14,6 +14,7 @@ class SetupViewController: UIViewController {
         userImage.translatesAutoresizingMaskIntoConstraints = false
         userImage.image = UIImage(named: "imageLogo")
         userImage.contentMode = .scaleAspectFit
+        userImage.clipsToBounds = true
         userImage.layer.borderColor = UIColor.specialBlue.cgColor
         userImage.layer.borderWidth = 3
         userImage.contentMode = .scaleAspectFit
@@ -42,7 +43,8 @@ class SetupViewController: UIViewController {
     
     private let infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Number of rounds"
+        label.text = "Choose the number\nof rounds to win"
+        label.numberOfLines = 3
         label.font = .robotoMedium24()
         label.textColor = .specialGrayText
         label.textAlignment = .center
@@ -72,9 +74,10 @@ class SetupViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = .specialBackground
         view.addSubview(userLogoImageView)
         view.addSubview(userNameLabel)
+        UserSettings.userName = userNameLabel.text ?? "Unknow"
         view.addSubview(infoImageView)
         view.addSubview(infoLabel)
         view.addSubview(oneBatleButton)
@@ -102,7 +105,7 @@ class SetupViewController: UIViewController {
             gameVC.modalPresentationStyle = .fullScreen
             self.present(gameVC, animated: true)
         }
-        print(UserSettings.roundsNumber)
+        print(UserSettings.userName)
     }
 }
 
@@ -127,12 +130,12 @@ extension SetupViewController {
             infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            oneBatleButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 30),
+            oneBatleButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 15),
             oneBatleButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -15),
             oneBatleButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25),
             oneBatleButton.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25),
             
-            threeBatleButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 30),
+            threeBatleButton.topAnchor.constraint(equalTo: infoLabel.bottomAnchor, constant: 15),
             threeBatleButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 15),
             threeBatleButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25),
             threeBatleButton.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.25),
