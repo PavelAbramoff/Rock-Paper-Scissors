@@ -52,6 +52,10 @@ class LoginPasswordView: UIView {
         guard let password = passwordTextField.text else {return ""}
         return password
     }
+    
+    func deleteTextTextField() {
+        loginTextField.text = ""; passwordTextField.text = ""
+    }
 }
 
 extension LoginPasswordView {
