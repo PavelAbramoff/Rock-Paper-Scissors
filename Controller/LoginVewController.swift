@@ -54,6 +54,8 @@ class LoginVewController: UIViewController {
 
         setupViews()
         setConstaints()
+        setupDismissKeyboardGesture()
+        setupKeyboardHiding()
        
     }
     private func setupViews() {
@@ -74,6 +76,11 @@ class LoginVewController: UIViewController {
         
         let username = loginPasswordView.getLoginData()
         let password = loginPasswordView.getPasswordData()
+        
+        if username.isEmpty || password.isEmpty {
+            showAlert(title: "Error", message: "Enter all parameters")
+                       resetValues()
+        }
         
         do {
             let users = RealmManager.shared.getUserData().filter(
@@ -97,22 +104,30 @@ class LoginVewController: UIViewController {
                     animated: true)
             } else {
                 print("Ошибка авторизации пользователя: неверное имя пользователя или пароль")
-//                UserSettings.isUserAuthorised = false
+                
+                
+                showAlert(title: "Error", message: "Please log in to your User account or register yourself")
+                resetValues()
             }
             
         } catch let error as NSError {
             print("Ошибка авторизации пользователя: \(error.localizedDescription)")
         }
     }
+  
+    private func resetValues() {
+        loginPasswordView.deleteTextTextField()
+    }
+
     
     @objc private func registerButtonTapped() {
         let registerVC = RegistrationViewController()
-        registerVC.modalPresentationStyle = .pageSheet
+        registerVC.modalPresentationStyle = .fullScreen
         present(registerVC, animated: true)
     }
     
 }
-
+//MARK: - SetConstraints
 extension LoginVewController {
     private func setConstaints() {
         NSLayoutConstraint.activate([

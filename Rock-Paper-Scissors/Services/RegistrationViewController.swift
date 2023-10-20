@@ -45,8 +45,10 @@ class RegistrationViewController: UIViewController {
 
         setupViews()
         setConstaints()
-       
+        setupDismissKeyboardGesture()
+        setupKeyboardHiding()
     }
+    
     private func setupViews() {
         view.backgroundColor = .specialBackground
         view.addSubview(closeButton)
@@ -70,40 +72,50 @@ class RegistrationViewController: UIViewController {
         let username = loginPasswordView.getLoginData()
         let password = loginPasswordView.getPasswordData()
         
-        do {
-            let newUser = UserModel()
-            
-            newUser.username = username
-            newUser.password = password
-            
-            RealmManager.shared.saveUserData(newUser)
-            
-            showAlert(title: "Succes 👍", message: "Hello, \(username)")
-            
-            UserSettings.userName = username
-            UserSettings.isUserAuthorised = true
-            UserSettings.isThisFirstRunning = false
-            
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(true, forKey: "isUserAuthorised")
-            userDefaults.set(username, forKey: "username")
-            presentingViewController?.dismiss(animated: true)
-            
-            let tabBar = MainTabBarController()
-            tabBar.modalPresentationStyle = .fullScreen
-            
-            tabBarController?.present(
-                tabBar,
-                animated: true)
-            
-            
-        } catch let error as NSError {
-            print("Ошибка авторизации пользователя: \(error.localizedDescription)")
-            showAlert(title: "Error ⚠️", message: "Something gone wrong ☹️")
+        if username.isEmpty || password.isEmpty {
+            showAlert(title: "Error", message: "Enter all parameters")
+            resetValues()
         }
+            
+            do {
+                let newUser = UserModel()
+                
+                newUser.username = username
+                newUser.password = password
+                
+                RealmManager.shared.saveUserData(newUser)
+                
+                showAlert(title: "Succes 👍", message: "Hello, \(username)")
+                
+                UserSettings.userName = username
+                UserSettings.isUserAuthorised = true
+                UserSettings.isThisFirstRunning = false
+                
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(true, forKey: "isUserAuthorised")
+                userDefaults.set(username, forKey: "username")
+                presentingViewController?.dismiss(animated: true)
+                
+                let tabBar = MainTabBarController()
+                tabBar.modalPresentationStyle = .fullScreen
+                
+                tabBarController?.present(
+                    tabBar,
+                    animated: true)
+                
+                
+            } catch let error as NSError {
+                print("Ошибка авторизации пользователя: \(error.localizedDescription)")
+                showAlert(title: "Error ⚠️", message: "Something gone wrong ☹️")
+            }
+        }
+    
+    private func resetValues() {
+        loginPasswordView.deleteTextTextField()
     }
+  
 }
-
+//MARK: - SetConstraints
 extension RegistrationViewController {
     private func setConstaints() {
         NSLayoutConstraint.activate([
@@ -119,8 +131,7 @@ extension RegistrationViewController {
             logoView.widthAnchor.constraint(equalToConstant: 200),
             
             welcomeLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 20),
-            welcomeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            welcomeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            welcomeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             welcomeLabel.heightAnchor.constraint(equalToConstant: 26),
             
             loginPasswordView.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 30),
