@@ -88,7 +88,7 @@ class LoginVewController: UIViewController {
                 username,
                 password
             )
-            if let user = users.first {
+            if users.first != nil {
                 print("Пользователь успешно авторизован!")
                 UserSettings.userName = username
                 UserSettings.isUserAuthorised = true
