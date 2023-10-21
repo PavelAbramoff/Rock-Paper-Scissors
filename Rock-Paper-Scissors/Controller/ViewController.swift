@@ -87,6 +87,19 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         return label
     }()
     
+    private let drawLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "DRAW, TRY AGAIN"
+        label.textColor = .specialMidnightBlue
+        label.font = .robotoBold24()
+        label.layer.cornerRadius = 10
+        label.addShadowOnView()
+        label.isHidden = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     private let paperButton = MatchButton(text: "🤚", countRounds: 1)
     private let rockButton = MatchButton(text: "👊", countRounds: 1)
     private let scissorsButton = MatchButton(text: "✌️", countRounds: 1)
@@ -114,6 +127,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         view.addSubview(computerPointDiscription)
         view.addSubview(playerPoint)
         view.addSubview(computerPoint)
+        view.addSubview(drawLabel)
         view.addSubview(syncImage)
         view.addSubview(syncContainer)
         
@@ -147,6 +161,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         if pcSelected == "rock" {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningRock)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: showDraw)
             
         } else if pcSelected == "paper" {
             gamesCounter += 1
@@ -177,6 +192,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             
         } else if pcSelected == "scissors" {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: showDraw)
         }
     }
     
@@ -192,7 +208,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             
         } else if pcSelected == "paper" {
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningPaper)
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: showDraw)
         } else if pcSelected == "scissors" {
             gamesCounter += 1
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: stopSpinningScissorsr)
@@ -262,6 +278,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func startSpinning() {
         roundLabel.isHidden = false
+        drawLabel.isHidden = true
         syncImage.image = UIImage(named:"fon")
         syncImage.startRotating()
     }
@@ -279,6 +296,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     func stopSpinningScissorsr() {
         syncImage.stopRotating()
         syncImage.image = UIImage(named:"scissors2")
+    }
+    func showDraw() {
+        drawLabel.isHidden = false
     }
     
     @objc func handleSyncTap(sender: UITapGestureRecognizer? = nil) {
@@ -325,6 +345,9 @@ extension ViewController {
             
             computerPoint.topAnchor.constraint(equalTo: computerPointDiscription.bottomAnchor, constant: 20),
             computerPoint.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60),
+            
+            drawLabel.bottomAnchor.constraint(equalTo: syncContainer.topAnchor, constant: -40),
+            drawLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             syncImage.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 230),
             syncImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),

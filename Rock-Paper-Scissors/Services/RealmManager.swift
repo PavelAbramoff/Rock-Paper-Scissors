@@ -45,7 +45,7 @@ class RealmManager {
         let sumGames = filteredArray.reduce(0) { (result, number) in
             return result + number.gamesNumber
         }
-        let winningPercentage = sumWins * 100 / sumGames
-        return winningPercentage
+//        let winningPercentage = sumWins * 100 / sumGames
+        return sumGames == 0 ? sumGames : sumWins * 100 / sumGames
     }
 }
