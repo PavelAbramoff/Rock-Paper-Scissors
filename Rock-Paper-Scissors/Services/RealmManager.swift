@@ -35,7 +35,10 @@ class RealmManager {
         }
     }
     func getUserWins(name: String) -> Int {
-         let allStatisticGames = RealmManager.shared.getUserStatisticData()
+        
+        var winningPercentage: Int
+        
+        let allStatisticGames = RealmManager.shared.getUserStatisticData()
          
         let predicate = NSPredicate(format: "username = '\(name)'")
         let filteredArray = allStatisticGames.filter(predicate).sorted(byKeyPath: "winsNumber").map{ $0 }
@@ -45,7 +48,13 @@ class RealmManager {
         let sumGames = filteredArray.reduce(0) { (result, number) in
             return result + number.gamesNumber
         }
-//        let winningPercentage = sumWins * 100 / sumGames
-        return sumGames == 0 ? sumGames : sumWins * 100 / sumGames
+        
+        if sumGames == 0 {
+            winningPercentage = 0
+        } else {
+            winningPercentage = sumWins * 100 / sumGames
+        }
+        
+        return winningPercentage
     }
 }

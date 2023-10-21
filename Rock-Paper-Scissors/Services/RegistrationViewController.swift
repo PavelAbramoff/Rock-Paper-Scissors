@@ -77,7 +77,6 @@ class RegistrationViewController: UIViewController {
             resetValues()
         }
             
-            do {
                 let newUser = UserModel()
                 
                 newUser.username = username
@@ -102,12 +101,6 @@ class RegistrationViewController: UIViewController {
                 tabBarController?.present(
                     tabBar,
                     animated: true)
-                
-                
-            } catch let error as NSError {
-                print("Ошибка авторизации пользователя: \(error.localizedDescription)")
-                showAlert(title: "Error ⚠️", message: "Something gone wrong ☹️")
-            }
         }
     
     private func resetValues() {

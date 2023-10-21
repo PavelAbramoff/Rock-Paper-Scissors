@@ -56,7 +56,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     private let computerPointDiscription: UILabel = {
         let label = UILabel()
-        label.text = "Computer Points"
+        label.text = "Computer's Points"
         label.textColor = .specialBlue
         label.font = .robotoBold20()
         label.layer.cornerRadius = 10
