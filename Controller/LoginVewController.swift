@@ -82,7 +82,6 @@ class LoginVewController: UIViewController {
                        resetValues()
         }
         
-        do {
             let users = RealmManager.shared.getUserData().filter(
                 "username = %@ AND password = %@",
                 username,
@@ -109,10 +108,7 @@ class LoginVewController: UIViewController {
                 showAlert(title: "Error", message: "Please log in to your User account or register yourself")
                 resetValues()
             }
-            
-        } catch let error as NSError {
-            print("Ошибка авторизации пользователя: \(error.localizedDescription)")
-        }
+
     }
   
     private func resetValues() {
